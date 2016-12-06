@@ -1,87 +1,131 @@
-<!DOCTYPE html>
+<!doctype html>
 <!-- saved from url=(0044)http://kenedict.com/networks/worldcup14/vis/ , thanks Andre!-->
-<html><head><meta http-equiv="content-type" content="text/html; charset=UTF8">
-  <title>Network |  Static smooth curves - World Cup Network</title>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF8">
+  <title>Dota 2 Network</title>
 
-  <script type="text/javascript" src="../../../dist/vis.js"></script>
-  <link type="text/css" rel="stylesheet" href="../../../dist/vis-network.min.css">
+  <script type="text/javascript" src="vis.js"></script>
+  <link type="text/css" rel="stylesheet" href="vis-network.min.css">
 
-  <script src="../datasources/WorldCup2014.js"></script>
+  <script src="dota.js"></script>
 
   <style type="text/css">
     #mynetwork {
-      width: 800px;
+      width: 1368px;
       height: 800px;
       border: 1px solid lightgray;
     }
   </style>
-  <script src="../../googleAnalytics.js"></script>
+  <script src="googleAnalytics.js"></script>
 </head>
 
 <body>
 
-<h2>Dynamic Data - Neighbourhood Highlight</h2>
-<div style="width:800px; font-size:14px;">
-  This example shows the power of the DataSet. Once a node is clicked, all nodes are greyed out except for the first and second order connected nodes.
-  In this example we show how you can determine the order of connection per node as well as applying individual styling to the nodes based on whether or not
-  they are connected to the selected node. The code doing the highlighting only takes about 1ms, the rest of the time is the redrawing of the network (9200 edges..).
-  <br /><br />
+<h2>Dota 2 Network of Pros</h2>
+
+<div style="width:700px; font-size:14px;">
+  
+  Here we have all the players that played over 50 games with any other player. Links are in between them. Based on the region that they have the most games, players have received some colors
+  
+  
 </div>
 
 <div id="mynetwork"></div>
 
 <script type="text/javascript">
   var network;
+
+var network;
   var allNodes;
   var highlightActive = false;
+
   var nodesDataset = new vis.DataSet(nodes); // these come from WorldCup2014.js
   var edgesDataset = new vis.DataSet(edges); // these come from WorldCup2014.js
   function redrawAll() {
+    // remove positoins
+   
+ allNodes = nodesDataset.get({returnType:"Object"});
+  
+  //  network.on("click",neighbourhoodHighlight);
+  for (var nodeId in allNodes)
+   { 
+    var s = allNodes[nodeId].title
+	 var arrayOfStrings = s.split("Edges:");
+	 //console.log(arrayOfStrings[1]);
+	 allNodes[nodeId].size = 30 + parseInt(arrayOfStrings[1]);
+	console.log(allNodes[nodeId].size	 );
+	}
+	var updateArray = [];
+    for (nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodesDataset.update(updateArray);
+    // create a network
     var container = document.getElementById('mynetwork');
+    var data = {
+      nodes: nodesDataset,
+      edges: edgesDataset
+    };
     var options = {
       nodes: {
         shape: 'dot',
-        scaling: {
-          min: 10,
-          max: 30,
-          label: {
-            min: 8,
-            max: 30,
-            drawThreshold: 12,
-            maxVisible: 20
-          }
-        },
+        
         font: {
-          size: 12,
+          size: 80,
           face: 'Tahoma'
         }
       },
       edges: {
-        width: 0.15,
-        color: {inherit: 'from'},
+        width: 0.5,
         smooth: {
           type: 'continuous'
         }
       },
-      physics: false,
+      physics: {
+        stabilization: false,
+        barnesHut: {
+          gravitationalConstant: -80000,
+          springConstant: 0.01,
+          springLength: 500
+        }
+		
+      },
       interaction: {
         tooltipDelay: 200,
-        hideEdgesOnDrag: true
+        hideEdgesOnDrag: false
       }
     };
-    var data = {nodes:nodesDataset, edges:edgesDataset} // Note: data is coming from ./datasources/WorldCup2014.js
+
+    // Note: data is coming from ./datasources/WorldCup2014.js
     network = new vis.Network(container, data, options);
+network.on("click", function (params) {
+  console.log(params);
+
+});
+
+ 
+
+
+
+
+
     // get a JSON object
-    allNodes = nodesDataset.get({returnType:"Object"});
-    network.on("click",neighbourhoodHighlight);
+ 
+  
   }
-  function neighbourhoodHighlight(params) {
+  
+  
+   function neighbourhoodHighlight(params) {
     // if something is selected:
     if (params.nodes.length > 0) {
       highlightActive = true;
       var i,j;
       var selectedNode = params.nodes[0];
       var degrees = 2;
+
       // mark all nodes as hard to read.
       for (var nodeId in allNodes) {
         allNodes[nodeId].color = 'rgba(200,200,200,0.5)';
@@ -92,12 +136,14 @@
       }
       var connectedNodes = network.getConnectedNodes(selectedNode);
       var allConnectedNodes = [];
+
       // get the second degree nodes
       for (i = 1; i < degrees; i++) {
         for (j = 0; j < connectedNodes.length; j++) {
           allConnectedNodes = allConnectedNodes.concat(network.getConnectedNodes(connectedNodes[j]));
         }
       }
+
       // all second degree nodes get a different color and their label back
       for (i = 0; i < allConnectedNodes.length; i++) {
         allNodes[allConnectedNodes[i]].color = 'rgba(150,150,150,0.75)';
@@ -106,6 +152,7 @@
           allNodes[allConnectedNodes[i]].hiddenLabel = undefined;
         }
       }
+
       // all first degree nodes get their own color and their label back
       for (i = 0; i < connectedNodes.length; i++) {
         allNodes[connectedNodes[i]].color = undefined;
@@ -114,6 +161,7 @@
           allNodes[connectedNodes[i]].hiddenLabel = undefined;
         }
       }
+
       // the main node gets its own color and its label back.
       allNodes[selectedNode].color = undefined;
       if (allNodes[selectedNode].hiddenLabel !== undefined) {
@@ -132,6 +180,7 @@
       }
       highlightActive = false
     }
+
     // transform the object into an array
     var updateArray = [];
     for (nodeId in allNodes) {
@@ -141,7 +190,10 @@
     }
     nodesDataset.update(updateArray);
   }
+  
+
+
   redrawAll()
 </script>
-
-</body></html>
+</body>
+</html>
