@@ -8,7 +8,7 @@
   <script type="text/javascript" src="vis.js"></script>
   <link type="text/css" rel="stylesheet" href="vis-network.min.css">
 
-  <script src="dota.js"></script>
+  <script src="dota4.js"></script>
 
   <style type="text/css">
     #mynetwork {
@@ -16,16 +16,8 @@
       height: 800px;
       border: 1px solid lightgray;
     }
-	#details {
-      width: 1368px;
-      height: 800px;
-      border: 1px solid lightgray;
-    }
   </style>
   <script src="googleAnalytics.js"></script>
-    <link href="vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
-<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-61231638-1', 'auto');ga('send', 'pageview');</script></head>
-
 </head>
 
 <body>
@@ -34,17 +26,17 @@
 
 <div style="width:700px; font-size:14px;">
   
-  Here we have all the players that played over 50 games with any other player. Links are in between them. Based on the region that they have the most games, players have received some colors
+  Here we have all the players that played over 100 games with any other player. Links are in between them. Based on the region that they have the most games, players have received some colors
   
   
 </div>
 
 <div id="mynetwork"></div>
-<div id="details"></div>
+
 <script type="text/javascript">
   var network;
 
-
+var network;
   var allNodes;
   var highlightActive = false;
 
@@ -114,7 +106,6 @@ network.on("click", function (params) {
 
 });
 
-
  
 
 
@@ -123,39 +114,6 @@ network.on("click", function (params) {
 
     // get a JSON object
  
-  var container2 = document.getElementById('details');
-    var items = [
-        {x:0 , y:12},
-         {x:1, y:8},
-         {x:2,y: 141},
-         {x:3, y:260},
-		 {x:4, y:0},
-         {x:5, y:137},
-		 {x:6, y:0},
-         {x:7, y:5},
-         {x:8, y:4},
-		 {x:9, y:0},
-         {x:10,y: 14},
-		 {x:11, y:0},
-         {x:12, y:67},
-         {x:13, y:4},
-		 {x:14, y:0},
-		 {x:15, y:0},
-		 {x:16, y:0},
-		 {x:17, y:0},
-         {x:18, y:113}
-    ];
-
-    var dataset = new vis.DataSet(items);
-    var options2 = {
-        style:'bar',
-        barChart: {width:10, align:'center'}, // align: left, center, right
-        
-        start : 0,
-		end: 19
-    };
-    var graph2d = new vis.Graph2d(container2, items, options2);
-  
   
   }
   
