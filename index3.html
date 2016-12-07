@@ -308,10 +308,10 @@ network.on("click", function (params) {
   /////////////////////////////////////////////////////////////////////
   
 		
-		$(function () {
+	
 		
 		
-		$('#MMRdistribution').highcharts({
+		Highcharts.chart('MMRdistribution', {
         chart: {
             type: 'scatter',
             zoomType: 'xy'
@@ -906,7 +906,7 @@ network.on("click", function (params) {
         ]});
 		
     
-});   
+
   
   /////
 
