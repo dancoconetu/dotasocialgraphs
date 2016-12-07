@@ -21,12 +21,12 @@
     }
 	#details {
       width: 1368px;
-      height: 800px;
+     
       border: 1px solid lightgray;
     }
 	#players {
       width: 1368px;
-      height: 800px;
+    
       border: 1px solid lightgray;
     }
 	#WTF {
@@ -107,59 +107,26 @@ ul.topnav li.icon {display: none;}
     <a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()">☰</a>
   </li>
 </ul>
-<h2>Dota 2 Network of Pros</h2>
+<h1>Dota 2 Network of Pros</h1>
 
-<div style="width:700px; font-size:14px;">
+<h3 style="width:700px; font-size:14px;">
   
-  Here we have all the players that played over 50 games with any other player. Links are in between them. Based on the region that they have the most games, players have received some colors
+ 
+  In this network, the player's colors are based on their ranking. We expect that most of them to have the same ranking with their counterparts. Therefore, for example you should see more yellow players connected to other yellow players. 
+  <br> Clicking on them, the links will be shown
+  <br> Hovering over them, their ranking MMR will be shown.
+  <br> The Bigger the ranking, the bigger the node in the network.
   
-  
-</div>
+</h3>
 
 <div id="mynetwork"></div>
-<div> </div>
+<h1> Number of players based on their ranking: from 5k to 8.5k </h1>
 <div id="details"></div>
-<div id="WTF" />
+<h1> Checking how similar are the players based on their ranking and their edges average mmr </h1>
+<h5>It can be observed that most of players are scattered around the middle. Considering that players either play public games based on matchmaking rating or in proffesional games, it is expected to be like this.</h5>
 <div id="MMRdistribution"   />
-<div>Top players that have more than 90 edges</div>
-<div id="players"></div>
-<div>What if teams were created based on people's average winrate with each other?</div>
-<div id="winrate">
-Team  1 <br>
-Id:  116030980 , Name:  GetovaS- , Ranking:  7044 <br>
-Id:  172414207 , Name:  StupidGuy , Ranking:  5983<br>
-Id:  106014083 , Name:  www1234543 , Ranking:  6188<br>
-Id:  124168390 , Name:  Mad , Ranking:  7078<br>
-Id:  109822425 , Name:  SHANKS- , Ranking:  6257<br>
-Winrate average:  0.830614050618 ,Team Average ranking:  6510.0<br>
-Team  2<br>
-Id:  103729052 , Name:  876 , Ranking:  5347<br>
-Id:  135384059 , Name:  hym , Ranking:  7630<br>
-Id:  110228930 , Name:  Ayo , Ranking:  7011<br>
-Id:  102024536 , Name:  balloon , Ranking:  5779<br>
-Id:  114031486 , Name:  QD , Ranking:  7327<br>
-Winrate average:  0.79902440992 ,Team Average ranking:  6618.8<br>
-Team  3<br>
-Id:  135384059 , Name:  hym , Ranking:  7630<br>
-Id:  86861614 , Name:  Mrrr , Ranking:  5601<br>
-Id:  110228930 , Name:  Ayo , Ranking:  7011<br>
-Id:  120374476 , Name:  DXM , Ranking:  6940<br>
-Id:  103729052 , Name:  876 , Ranking:  5347<br>
-Winrate average:  0.7960191364 ,Team Average ranking:  6505.8<br>
-Team  4<br>
-Id:  103729052 , Name:  876 , Ranking:  5347<br>
-Id:  169672157 , Name:  Stella , Ranking:  6786<br>
-Id:  114031486 , Name:  QD , Ranking:  7327<br>
-Id:  135384059 , Name:  hym , Ranking:  7630<br>
-Id:  102024536 , Name:  balloon , Ranking:  5779<br>
-Winrate average:  0.785559609861 ,Team Average ranking:  6573.8<br>
-Team  5<br>
-Id:  114031486 , Name:  QD , Ranking:  7327<br>
-Id:  103729052 , Name:  876 , Ranking:  5347<br>
-Id:  102024536 , Name:  balloon , Ranking:  5779<br>
-Id:  92590479 , Name:  Jixing , Ranking:  7024<br>
-Id:  169672157 , Name:  Stella , Ranking:  6786<br>
-Winrate average:  0.772063386746 ,Team Average ranking:  6452.6<br></div>
+
+
 <script type="text/javascript">
   var network;
 

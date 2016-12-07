@@ -83,14 +83,16 @@ ul.topnav li.icon {display: none;}
 </ul>
 <h2>Dota 2 Network of Pros</h2>
 
-<div style="width:700px; font-size:14px;">
+<h3 style="width:700px; font-size:14px;">
   
-  Here we have all the players that played over 100 games with any other player. Links are in between them. Based on the region that they have the most games, players have received some colors
+  Here we have all the players that played over 100 games with any other player. We can still see the 4 big communities that were in the previous graph, with 50 games. Clicking one player, will show all its edges. 
+  <br>As expected, there are fewer edges in between players since there more games needed, but the communities still remain. 
   
-  
-</div>
+    <br> The node size is based on the number of links.
+</h3>
 
 <div id="mynetwork"></div>
+<h1>Top players that have more than 40 edges</h1>
 <div id="players"></div>
 <script type="text/javascript">
   var network;
@@ -174,7 +176,7 @@ var container3 = document.getElementById('players');
 	//var connectedNodes = network.getConnectedNodes(allNodes[nodeId]);
 	//if (connectedNodes.length>90)
 	if (allNodes[nodeId].value/5 >= 40)
-	{   players+= "Name: "+ allNodes[nodeId].label + "," + "Edges:" + allNodes[nodeId].value/5 + ",Region:" +allNodes[nodeId].group +"<br>";
+	{  players+= "Name: "+ allNodes[nodeId].label + "<br>" + "Edges: " + allNodes[nodeId].value/5 + "<br> Region: " +allNodes[nodeId].group +"<br> -------------------------------<br>" ;
 		items3[counter] = {x:allNodes[nodeId].label, y:allNodes[nodeId].value/5}
 	}
 	}

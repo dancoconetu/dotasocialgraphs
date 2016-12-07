@@ -18,12 +18,12 @@
     }
 	#details {
       width: 1368px;
-      height: 800px;
+      
       border: 1px solid lightgray;
     }
 	#players {
       width: 1368px;
-      height: 800px;
+      
       border: 1px solid lightgray;
     }
 		body {margin:0;}
@@ -82,7 +82,7 @@ ul.topnav li.icon {display: none;}
 
 </head>
 
-<body>
+<body BGCOLOR="#F5F5F5" >
 <ul class="topnav" id="myTopnav">
 
   <li><a class="active" href="https://dancoconetu.github.io/dotasocialgraphs">More than 50 games based on region</a></li>
@@ -96,55 +96,205 @@ ul.topnav li.icon {display: none;}
 </ul>
 <h2>Dota 2 Network of Pros</h2>
 
-<div style="width:700px; font-size:14px;">
+<h3 style="width:700px; font-size:14px;">
   
-  Here we have all the players that played over 50 games with any other player. Links are in between them. Based on the region that they have the most games, players have received some colors
+  Here we have all the players that played over 50 games with any other player. The colors are based on the region that they played mostly. It can be seen that 4 big communities can be distinguished: one with european players(region 3/blue color), one with american players(region 2/red color),
+  one with players from SEA (region 5/purple color) and players from China (regions 12 or 18/yellow or orange color)
+  <br> Hovering over players, you can see their team if they have one and the number of links. Clicking one player, shows its links to others players.
+  <br> The node size is based on the number of links.
   
-  
-</div>
+</h3>
 
 <div id="mynetwork"></div>
-<div>Bar chart of number of players per region </div>
+<h1>Bar chart of number of players per region </h1>
 <div id="details"></div>
-<div>Top players that have more than 90 edges</div>
+<h1>Top players that have more than 90 edges</h1>
 <div id="players"></div>
-<div>What if teams were created based on people's average winrate with each other?</div>
-<div id="winrate">
+<h1>What if teams were created based on people's average winrate with each other?</h1>
+
 Team  1 <br>
 Id:  116030980 , Name:  GetovaS- , Ranking:  7044 <br>
-Id:  172414207 , Name:  StupidGuy , Ranking:  5983<br>
-Id:  106014083 , Name:  www1234543 , Ranking:  6188<br>
-Id:  124168390 , Name:  Mad , Ranking:  7078<br>
-Id:  109822425 , Name:  SHANKS- , Ranking:  6257<br>
-Winrate average:  0.830614050618 ,Team Average ranking:  6510.0<br>
-Team  2<br>
-Id:  103729052 , Name:  876 , Ranking:  5347<br>
-Id:  135384059 , Name:  hym , Ranking:  7630<br>
-Id:  110228930 , Name:  Ayo , Ranking:  7011<br>
-Id:  102024536 , Name:  balloon , Ranking:  5779<br>
-Id:  114031486 , Name:  QD , Ranking:  7327<br>
-Winrate average:  0.79902440992 ,Team Average ranking:  6618.8<br>
-Team  3<br>
-Id:  135384059 , Name:  hym , Ranking:  7630<br>
-Id:  86861614 , Name:  Mrrr , Ranking:  5601<br>
-Id:  110228930 , Name:  Ayo , Ranking:  7011<br>
-Id:  120374476 , Name:  DXM , Ranking:  6940<br>
-Id:  103729052 , Name:  876 , Ranking:  5347<br>
-Winrate average:  0.7960191364 ,Team Average ranking:  6505.8<br>
-Team  4<br>
-Id:  103729052 , Name:  876 , Ranking:  5347<br>
-Id:  169672157 , Name:  Stella , Ranking:  6786<br>
-Id:  114031486 , Name:  QD , Ranking:  7327<br>
-Id:  135384059 , Name:  hym , Ranking:  7630<br>
-Id:  102024536 , Name:  balloon , Ranking:  5779<br>
-Winrate average:  0.785559609861 ,Team Average ranking:  6573.8<br>
-Team  5<br>
-Id:  114031486 , Name:  QD , Ranking:  7327<br>
-Id:  103729052 , Name:  876 , Ranking:  5347<br>
-Id:  102024536 , Name:  balloon , Ranking:  5779<br>
-Id:  92590479 , Name:  Jixing , Ranking:  7024<br>
-Id:  169672157 , Name:  Stella , Ranking:  6786<br>
-Winrate average:  0.772063386746 ,Team Average ranking:  6452.6<br></div>
+Id:  172414207 , Name:  StupidGuy , Ranking:  5983 <br>
+Id:  106014083 , Name:  www1234543 , Ranking:  6188 <br>
+Id:  109822425 , Name:  SHANKS- , Ranking:  6257 <br>
+Id:  124168390 , Name:  Mad , Ranking:  7078 <br>
+Winrate average:  0.830614050618 ,Team Average ranking:  6510.0 <br> <br> <br>
+Team  2 <br>
+Id:  110228930 , Name:  Ayo , Ranking:  7011 <br>
+Id:  103729052 , Name:  876 , Ranking:  5406 <br>
+Id:  102024536 , Name:  balloon , Ranking:  5719 <br>
+Id:  114031486 , Name:  QD , Ranking:  7327 <br>
+Id:  135384059 , Name:  hym , Ranking:  7630 <br>
+Winrate average:  0.79902440992 ,Team Average ranking:  6618.6 <br> <br> <br>
+Team  3 <br>
+Id:  110228930 , Name:  Ayo , Ranking:  7011 <br>
+Id:  86861614 , Name:  Mrrr , Ranking:  5566 <br>
+Id:  135384059 , Name:  hym , Ranking:  7630 <br>
+Id:  103729052 , Name:  876 , Ranking:  5406 <br>
+Id:  120374476 , Name:  DXM , Ranking:  6940 <br>
+Winrate average:  0.7960191364 ,Team Average ranking:  6510.6 <br> <br> <br>
+Team  4 <br>
+Id:  103729052 , Name:  876 , Ranking:  5406 <br>
+Id:  135384059 , Name:  hym , Ranking:  7630 <br>
+Id:  114031486 , Name:  QD , Ranking:  7327 <br>
+Id:  169672157 , Name:  Stella , Ranking:  6786 <br>
+Id:  102024536 , Name:  balloon , Ranking:  5719 <br>
+Winrate average:  0.785559609861 ,Team Average ranking:  6573.6 <br> <br> <br>
+Team  5 <br>
+Id:  110228930 , Name:  Ayo , Ranking:  7011 <br>
+Id:  92590479 , Name:  Jixing , Ranking:  7024 <br>
+Id:  103729052 , Name:  876 , Ranking:  5406 <br>
+Id:  114031486 , Name:  QD , Ranking:  7327 <br> <br>
+Id:  102024536 , Name:  balloon , Ranking:  5719 <br>
+Winrate average:  0.775837619022 ,Team Average ranking:  6497.4 <br> <br> <br>
+Team  6 <br>
+Id:  135384059 , Name:  hym , Ranking:  7630 <br>
+Id:  169672157 , Name:  Stella , Ranking:  6786 <br>
+Id:  120374476 , Name:  DXM , Ranking:  6940 <br>
+Id:  86861614 , Name:  Mrrr , Ranking:  5566 <br>
+Id:  103729052 , Name:  876 , Ranking:  5406 <br>
+Winrate average:  0.77379844101 ,Team Average ranking:  6465.6 <br> <br> <br>
+Team  7 <br>
+Id:  92590479 , Name:  Jixing , Ranking:  7024 <br>
+Id:  102024536 , Name:  balloon , Ranking:  5719 <br>
+Id:  114031486 , Name:  QD , Ranking:  7327 <br>
+Id:  169672157 , Name:  Stella , Ranking:  6786 <br>
+Id:  103729052 , Name:  876 , Ranking:  5406 <br>
+Winrate average:  0.772063386746 ,Team Average ranking:  6452.4 <br> <br> <br>
+Team  8 <br>
+Id:  103729052 , Name:  876 , Ranking:  5406 <br>
+Id:  169672157 , Name:  Stella , Ranking:  6786 <br>
+Id:  182325064 , Name:  sss , Ranking:  7303 <br>
+Id:  135384059 , Name:  hym , Ranking:  7630 <br>
+Id:  114031486 , Name:  QD , Ranking:  7327 <br>
+Winrate average:  0.756665013421 ,Team Average ranking:  6890.4 <br> <br> <br>
+Team  9 <br>
+Id:  109883841 , Name:  僵硬哥 , Ranking:  6648 <br>
+Id:  115621730 , Name:  OmegaPwner , Ranking:  6331 <br>
+Id:  116030980 , Name:  GetovaS- , Ranking:  7044 <br>
+Id:  109822425 , Name:  SHANKS- , Ranking:  6257 <br>
+Id:  91981924 , Name:  Fly , Ranking:  6019 <br>
+Winrate average:  0.749156546512 ,Team Average ranking:  6459.8 <br> <br> <br>
+Team  10 <br>
+Id:  103729052 , Name:  876 , Ranking:  5406 <br>
+Id:  86861614 , Name:  Mrrr , Ranking:  5566 <br>
+Id:  182325064 , Name:  sss , Ranking:  7303 <br>
+Id:  169672157 , Name:  Stella , Ranking:  6786 <br>
+Id:  135384059 , Name:  hym , Ranking:  7630 <br>
+Winrate average:  0.745282554847 ,Team Average ranking:  6538.2 <br> <br> <br>
+Team  11 <br> 
+Id:  39173624 , Name:  guanzo , Ranking:  6445 <br>
+Id:  123885977 , Name:  SHELTER , Ranking:  7000 <br>
+Id:  100802913 , Name:  c7a551c , Ranking:  6178 <br>
+Id:  72981488 , Name:  Ossss , Ranking:  4676 <br>
+Id:  116434499 , Name:  sN , Ranking:  6051 <br>
+Winrate average:  0.740472892616 ,Team Average ranking:  6070.0 <br> <br> <br>
+Team  12 <br>
+Id:  103729052 , Name:  876 , Ranking:  5406 <br>
+Id:  86861614 , Name:  Mrrr , Ranking:  5566 <br>
+Id:  135384059 , Name:  hym , Ranking:  7630 <br>
+Id:  149486894 , Name:  Sccc丶 , Ranking:  9155 <br>
+Id:  169672157 , Name:  Stella , Ranking:  6786 <br>
+Winrate average:  0.739095008985 ,Team Average ranking:  6908.6 <br> <br> <br>
+Team  13 <br>
+Id:  91981924 , Name:  Fly , Ranking:  6019 <br>
+Id:  115621730 , Name:  OmegaPwner , Ranking:  6331 <br>
+Id:  116030980 , Name:  GetovaS- , Ranking:  7044 <br>
+Id:  109822425 , Name:  SHANKS- , Ranking:  6257 <br>
+Id:  91963568 , Name:  whatever- , Ranking:  5750 <br>
+Winrate average:  0.734694145943 ,Team Average ranking:  6280.2 <br> <br> <br>
+Team  14 <br>
+Id:  109883841 , Name:  僵硬哥 , Ranking:  6648 <br>
+Id:  115621730 , Name:  OmegaPwner , Ranking:  6331 <br>
+Id:  116030980 , Name:  GetovaS- , Ranking:  7044 <br>
+Id:  109822425 , Name:  SHANKS- , Ranking:  6257 <br>
+Id:  91963568 , Name:  whatever- , Ranking:  5750 <br>
+Winrate average:  0.729337693089 ,Team Average ranking:  6406.0 <br> <br> <br>
+Team  15 <br>
+Id:  116030980 , Name:  GetovaS- , Ranking:  7044 <br>
+Id:  115621730 , Name:  OmegaPwner , Ranking:  6331 <br>
+Id:  91981924 , Name:  Fly , Ranking:  6019 <br>
+Id:  109883841 , Name:  僵硬哥 , Ranking:  6648 <br>
+Id:  91963568 , Name:  whatever- , Ranking:  5750 <br>
+Winrate average:  0.726042495576 ,Team Average ranking:  6358.4 <br> <br> <br>
+<h2>Team  16  ***** -THIS was actually a real team</h2>
+<br>Id:  41231571 , Name:  s4 , Ranking:  8211
+<br>Id:  86745912 , Name:  Arteezy , Ranking:  7547
+<br>Id:  73562326 , Name:  zai , Ranking:  7765
+<br>Id:  82262664 , Name:  Liquid`KuroKy , Ranking:  7372
+<br>Id:  87278757 , Name:  Puppey , Ranking:  7492
+Winrate average:  0.724048094578 ,Team Average ranking:  7677.4 <br> <br> <br>
+Team  17
+<br>Id:  121917409 , Name:  Wenn , Ranking:  7008
+<br>Id:  126417273 , Name:  Ah Jit , Ranking:  7992
+<br>Id:  113457795 , Name:  NaNa , Ranking:  8013
+<br>Id:  101525357 , Name:  KanGaroo , Ranking:  7234
+<br>Id:  111034589 , Name:  343 , Ranking:  6257
+Winrate average:  0.720954085789 ,Team Average ranking:  7300.8 <br> <br> <br>
+<h2>Team  18  ***** -THIS was actually a real team</h2>
+<br>Id:  100471531 , Name:  Jabz , Ranking:  7759
+<br>Id:  89603649 , Name:  NutZ , Ranking:  6625
+<br>Id:  85417034 , Name:  xy- , Ranking:  7007
+<br>Id:  84772440 , Name:  iceiceice , Ranking:  7481
+<br>Id:  21289303 , Name:  Black^ , Ranking:  7187
+Winrate average:  0.714556231509 ,Team Average ranking:  7211.8 <br> <br> <br>
+Team  19
+<br>Id:  113457795 , Name:  NaNa , Ranking:  8013
+<br>Id:  94296097 , Name:  xNova , Ranking:  6987
+<br>Id:  101525357 , Name:  KanGaroo , Ranking:  7234
+<br>Id:  126417273 , Name:  Ah Jit , Ranking:  7992
+<br>Id:  119576842 , Name:  ah fu , Ranking:  6868
+Winrate average:  0.708492827412 ,Team Average ranking:  7418.8 <br> <br> <br>
+Team  20
+<br>Id:  121917409 , Name:  Wenn , Ranking:  7008
+<br>Id:  119576842 , Name:  ah fu , Ranking:  6868
+<br>Id:  101525357 , Name:  KanGaroo , Ranking:  7234
+<br>Id:  126417273 , Name:  Ah Jit , Ranking:  7992
+<br>Id:  113457795 , Name:  NaNa , Ranking:  8013
+Winrate average:  0.705412652336 ,Team Average ranking:  7423.0 <br> <br> <br>
+<h2>Team  21  ***** -THIS was actually a real team</h2>
+<br>Id:  116585378 , Name:  MidOne , Ranking:  8042
+<br>Id:  93616251 , Name:  Ohaiyo , Ranking:  7206
+<br>Id:  102099826 , Name:  DJ , Ranking:  7130
+<br>Id:  111034589 , Name:  343 , Ranking:  6257
+<br>Id:  89249333 , Name:  Net , Ranking:  7192
+Winrate average:  0.70124154696 ,Team Average ranking:  7165.4 <br> <br> <br>
+Team  22
+<br>Id:  93289364 , Name:  zExBinGo , Ranking:  7550
+<br>Id:  90892194 , Name:  longdd , Ranking:  6186
+<br>Id:  108484186 , Name:  mikasa , Ranking:  7180
+<br>Id:  106863163 , Name:  Maybe , Ranking:  7205
+<br>Id:  103729052 , Name:  876 , Ranking:  5406
+Winrate average:  0.699617476488 ,Team Average ranking:  6705.4 <br> <br> <br>
+Team  23
+<br>Id:  109822425 , Name:  SHANKS- , Ranking:  6257
+<br>Id:  91981924 , Name:  Fly , Ranking:  6019
+<br>Id:  109883841 , Name:  僵硬哥 , Ranking:  6648
+<br>Id:  91963568 , Name:  whatever- , Ranking:  5750
+<br>Id:  115621730 , Name:  OmegaPwner , Ranking:  6331
+Winrate average:  0.696173974005 ,Team Average ranking:  6201.0 <br> <br> <br>
+Team  24
+<br>Id:  26682464 , Name:  Ryze , Ranking:  6810
+<br>Id:  42989814 , Name:  Babyknight , Ranking:  7726
+<br>Id:  97590558 , Name:  Ace , Ranking:  7999
+<br>Id:  43619695 , Name:  HeStEJoE-RoTTeN , Ranking:  7505
+<br>Id:  23883296 , Name:  NoiA , Ranking:  7004
+Winrate average:  0.688968375367 ,Team Average ranking:  7408.8 <br> <br> <br>
+Team  25
+<br>Id:  89249333 , Name:  Net , Ranking:  7192
+<br>Id:  89330493 , Name:  Xtinct , Ranking:  5375
+<br>Id:  93616251 , Name:  Ohaiyo , Ranking:  7206
+<br>Id:  121052479 , Name:  YamateH , Ranking:  6833
+<br>Id:  91644707 , Name:  Ky、xY` , Ranking:  7192
+Winrate average:  0.684215917431 ,Team Average ranking:  6759.6 <br> <br> <br>
+
+<h2>Team  26  ***** - THIS was actually a real team</h2>
+<br>Id:  73562326 , Name:  zai , Ranking:  7765
+<br>Id:  86727555 , Name:  PPD , Ranking:  6519
+<br>Id:  86745912 , Name:  Arteezy , Ranking:  7547
+<br>Id:  121847953 , Name:  cantwinwithme , Ranking:  6471
+<br>Id:  87276347 , Name:  Universe , Ranking:  7765
+Winrate average:  0.68270524153 ,Team Average ranking:  7213.4  <br> <br> <br></div>
 <script type="text/javascript">
   var network;
 
@@ -274,7 +424,7 @@ allNodes = nodesDataset.get({returnType:"Object"});
 	//var connectedNodes = network.getConnectedNodes(allNodes[nodeId]);
 	//if (connectedNodes.length>90)
 	if (allNodes[nodeId].value/2 >= 90)
-	{   players+= "Name: "+ allNodes[nodeId].label + "," + "Edges:" + allNodes[nodeId].value/2 + ",Region:" +allNodes[nodeId].group +"<br>";
+	{   players+= "Name: "+ allNodes[nodeId].label + "<br>" + "Edges: " + allNodes[nodeId].value/2 + "<br> Region: " +allNodes[nodeId].group +"<br> -------------------------------<br>" ;
 		items3[counter] = {x:allNodes[nodeId].label, y:allNodes[nodeId].value/2}
 	}
 	}
