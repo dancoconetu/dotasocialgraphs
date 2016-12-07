@@ -1,0 +1,930 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+
+  
+  
+
+  
+  
+  
+
+  
+
+  <script type="text/javascript" src="http://code.jquery.com/jquery-3.1.1.js"></script>
+
+  
+
+  
+
+  
+
+  
+    <link rel="stylesheet" type="text/css" href="http://fiddle.jshell.net/css/result-light.css">
+  
+
+  
+
+  <style type="text/css">
+    .highcharts-tooltip h3 {
+    margin: 0.3em 0;
+}
+
+body {margin:0;}
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+  display: inline-block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+ul.topnav li a:hover {background-color: #555;}
+
+ul.topnav li.icon {display: none;}
+
+@media screen and (max-width:680px) {
+  ul.topnav li:not(:first-child) {display: none;}
+  ul.topnav li.icon {
+    float: right;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width:680px) {
+  ul.topnav.responsive {position: relative;}
+  ul.topnav.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  ul.topnav.responsive li {
+    float: none;
+    display: inline;
+  }
+  ul.topnav.responsive li a {
+    display: block;
+    text-align: left;
+  }
+  }
+
+  </style>
+
+  <title>Highcharts Demo</title>
+
+  
+    
+
+
+
+
+<script type='text/javascript'>//<![CDATA[
+
+$(function () {
+    Highcharts.chart('container', {
+
+        chart: {
+            type: 'bubble',
+            plotBorderWidth: 1,
+            zoomType: 'xy'
+        },
+
+        legend: {
+            enabled: false
+        },
+
+        title: {
+            text: 'Sentiment of players based on their rating'
+        },
+
+       
+
+        xAxis: {
+            gridLineWidth: 1,
+            title: {
+                text: 'Mmr Value'
+            },
+            labels: {
+                format: '{value}'
+            }
+        },
+
+        yAxis: {
+            startOnTick: false,
+            endOnTick: false,
+            title: {
+                text: 'Sentiment Value'
+            },
+            labels: {
+                format: '{value} '
+            },
+            maxPadding: 0.2,
+            plotLines: [{
+                color: 'black',
+                dashStyle: 'line',
+                width: 5,
+                value: 5,
+                label: {
+                    align: 'right',
+                    style: {
+                        fontStyle: 'italic'
+                    },
+                   
+                    x: -10
+                },
+                zIndex: 3
+            }]
+        },
+
+        tooltip: {
+            useHTML: true,
+            headerFormat: '<table>',
+            pointFormat: '<tr><th colspan="2"><h3>{point.name}</h3></th></tr>' +
+                '<tr><th>MMR:</th><td>{point.x} </td></tr>' +
+                '<tr><th>Sentiment rating:</th><td>{point.y}</td></tr>'
+                ,
+            footerFormat: '</table>',
+            followPointer: true
+        },
+
+        plotOptions: {
+            series: {
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}'
+                }
+            }
+        },
+
+        series: [{
+            data:  [
+{x: 4968, y: 5.35336938436, z:0.4, name: 'JJ-' },
+{x: 6506, y: 5.29352212389, z:0.4, name: 'poloson' },
+{x: 6359, y: 5.68211764706, z:0.4, name: 'Aghanim' },
+{x: 1, y: 4.44, z:0.4, name: '판다맨' },
+{x: 6487, y: 5.23204103672, z:0.4, name: 'Varizh' },
+{x: 8304, y: 5.48211183496, z:0.4, name: 'Abed' },
+{x: 7407, y: 5.25153623188, z:0.4, name: 'Mag' },
+{x: 5879, y: 5.09733333333, z:0.4, name: '897' },
+{x: 6416, y: 5.31237804878, z:0.4, name: 'Jellopy' },
+{x: 3276, y: 5.29818181818, z:0.4, name: 'MasterRamen' },
+{x: 8490, y: 4.97396449704, z:0.4, name: 'Monet' },
+{x: 3644, y: 5.27475285171, z:0.4, name: '' },
+{x: 5475, y: 5.46064516129, z:0.4, name: 'Gangster' },
+{x: 7862, y: 5.14098966027, z:0.4, name: 'xinq' },
+{x: 7639, y: 5.09202846975, z:0.4, name: 'Super' },
+{x: 6059, y: 4.93826086957, z:0.4, name: 'Jixing' },
+{x: 6392, y: 5.00971223022, z:0.4, name: 'Yin' },
+{x: 7647, y: 5.438540381, z:0.4, name: 'BSJ' },
+{x: 6316, y: 5.34691914894, z:0.4, name: 'Eden' },
+{x: 7556, y: 5.27749819755, z:0.4, name: 'Dubu' },
+{x: 7061, y: 5.37729251701, z:0.4, name: 'topson' },
+{x: 7044, y: 5.37255685582, z:0.4, name: 'GetovaS-' },
+{x: 5686, y: 5.17219512195, z:0.4, name: 'Sharfik' },
+{x: 6964, y: 5.27293958521, z:0.4, name: 'M-god' },
+{x: 5682, y: 5.05952861953, z:0.4, name: 'Nando' },
+{x: 6790, y: 5.00639240506, z:0.4, name: 'Sheccid' },
+{x: 7382, y: 5.33220613288, z:0.4, name: 'WwD' },
+{x: 6279, y: 5.54262104584, z:0.4, name: 'Erice' },
+{x: 7472, y: 5.41573998365, z:0.4, name: 'UnderShock' },
+{x: 5326, y: 5.23929752066, z:0.4, name: 'Ned' },
+{x: 6684, y: 5.08464720195, z:0.4, name: 'Xepher' },
+{x: 8031, y: 5.33379358438, z:0.4, name: 'SEr1a-' },
+{x: 6567, y: 5.25615146832, z:0.4, name: 'sQreen' },
+{x: 6261, y: 5.34682926829, z:0.4, name: 'DkPhobos' },
+{x: 7598, y: 5.06017278618, z:0.4, name: 'yCchen' },
+{x: 4658, y: 5.30015016424, z:0.4, name: 'BlueBanana' },
+{x: 7172, y: 5.26931451613, z:0.4, name: 'GeneRaL' },
+{x: 6835, y: 5.26090510949, z:0.4, name: 'Maybe Next Time' },
+{x: 7886, y: 5.25019323671, z:0.4, name: 'JerAx' },
+{x: 5371, y: 5.2811023622, z:0.4, name: 'Stress' },
+{x: 7322, y: 5.40937551164, z:0.4, name: 'KvH' },
+{x: 5996, y: 4.72823529412, z:0.4, name: 'Reeves' },
+{x: 1, y: 7.54, z:5, name: 'Jigglebilly' },
+{x: 4407, y: 5.51236363636, z:0.4, name: 'CHOMY' },
+{x: 1, y: 5.58, z:0.4, name: 'Miracle-' },
+{x: 6839, y: 5.13962825279, z:0.4, name: 'Azrael' },
+{x: 7380, y: 5.33267872161, z:0.4, name: 'Sh4doweh' },
+{x: 6223, y: 5.23649761117, z:0.4, name: 'Solo' },
+{x: 7611, y: 5.33456488336, z:0.4, name: 'ritsu' },
+{x: 6140, y: 5.22917355372, z:0.4, name: 'Peanut Bruddah' },
+{x: 5388, y: 5.43705128205, z:0.4, name: '123123123123123' },
+{x: 7448, y: 5.51996627319, z:0.4, name: 'Ben' },
+{x: 5257, y: 5.15, z:0.4, name: 'Bong' },
+{x: 4385, y: 5.06158273381, z:0.4, name: 'Sayaka.' },
+{x: 7012, y: 5.43538421053, z:0.4, name: 'fronzy' },
+{x: 6955, y: 5.26271468144, z:0.4, name: 'tkt_couzin' },
+{x: 7437, y: 4.93283333333, z:0.4, name: 'Ran' },
+{x: 6755, y: 5.14411764706, z:0.4, name: 'BanG' },
+{x: 5750, y: 5.30978873239, z:0.4, name: 'whatever-' },
+{x: 1, y: 5.01846153846, z:0.4, name: 'MHwwwwwwk' },
+{x: 6389, y: 5.65246073298, z:0.4, name: 'L0lik_O' },
+{x: 6910, y: 4.98117647059, z:0.4, name: 'Sealkid' },
+{x: 6232, y: 5.29276995305, z:0.4, name: 'H4nn1' },
+{x: 3933, y: 5.78106960951, z:0.4, name: 'ODPixel' },
+{x: 6815, y: 5.26259120674, z:0.4, name: 'Accelgd' },
+{x: 7601, y: 5.03238095238, z:0.4, name: 'Jack' },
+{x: 5192, y: 4.85090909091, z:0.4, name: 'obb' },
+{x: 8191, y: 5.37934924078, z:0.4, name: 'FoREv' },
+{x: 7679, y: 5.4662145749, z:0.4, name: 'inYourdream' },
+{x: 5701, y: 5.18483122363, z:0.4, name: 'PSM' },
+{x: 6040, y: 5.33754237288, z:0.4, name: 'Lugia' },
+{x: 6753, y: 4.93261538462, z:0.4, name: 'Xtt' },
+{x: 8908, y: 5.32704398647, z:0.4, name: 'ALOHADANCE' },
+{x: 6648, y: 5.88334302326, z:0.4, name: 'Handsken' },
+{x: 7008, y: 5.27628992629, z:0.4, name: 'Wenn' },
+{x: 5123, y: 5.3952247191, z:0.4, name: 'SXOCXS' },
+{x: 7939, y: 5.43562334218, z:0.4, name: 'Jeyo' },
+{x: 4166, y: 5.53039800995, z:0.4, name: 'Cheshir' },
+{x: 3011, y: 5.17543209877, z:0.4, name: 'Marios' },
+{x: 7639, y: 5.33672492639, z:0.4, name: '7Mad-' },
+{x: 6963, y: 5.1462195122, z:0.4, name: 'OB.DD' },
+{x: 7782, y: 4.96833333333, z:0.4, name: 'MEVIUS' },
+{x: 6111, y: 5.29619307832, z:0.4, name: 'Minerva' },
+{x: 7978, y: 5.38456937799, z:0.4, name: 'Miposhka' },
+{x: 6834, y: 4.9958974359, z:0.4, name: 'ddc' },
+{x: 6469, y: 5.2275, z:0.4, name: 'YYaiKK' },
+{x: 6279, y: 5.37197132616, z:0.4, name: 'ABUSED96' },
+{x: 6523, y: 5.42641741808, z:0.4, name: 'USH' },
+{x: 6622, y: 5.2039486166, z:0.4, name: 'ztok' },
+{x: 4009, y: 5.61484848485, z:0.4, name: '@ErikBarge' },
+{x: 7444, y: 5.08422794118, z:0.4, name: 'September' },
+{x: 6843, y: 5.18898670044, z:0.4, name: 'funn1k' },
+{x: 5252, y: 5.33264453961, z:0.4, name: 'ima_sheep(sux)' },
+{x: 7003, y: 5.20329312425, z:0.4, name: 'Fervian' },
+{x: 5712, y: 5.48025423729, z:0.4, name: 'A' },
+{x: 7433, y: 5.37147451658, z:0.4, name: '33' },
+{x: 6745, y: 5.39439450687, z:0.4, name: 'Biryu' },
+{x: 6701, y: 5.0368, z:0.4, name: 'Cartman' },
+{x: 5101, y: 5.64285714286, z:0.4, name: '' },
+{x: 4931, y: 5.45430397727, z:0.4, name: 'Oddie' },
+{x: 7674, y: 5.31437807882, z:0.4, name: 'Gorgc' },
+{x: 7394, y: 5.2853615329, z:0.4, name: 'ab1ng' },
+{x: 7583, y: 5.48811309344, z:0.4, name: 'NoFear' },
+{x: 8407, y: 4.96989473684, z:0.4, name: 'SMASH' },
+{x: 7903, y: 4.97666666667, z:0.4, name: 'destiny samaQAQ' },
+{x: 7211, y: 5.38958198664, z:0.4, name: 'Sovereign' },
+{x: 7482, y: 5.36586678832, z:0.4, name: 'Zai' },
+{x: 7908, y: 5.06608910891, z:0.4, name: 'old chicken' },
+{x: 7228, y: 4.99933333333, z:0.4, name: 'Shiki' },
+{x: 7059, y: 5.31589473684, z:0.4, name: 'Evgeny Kochetov' },
+{x: 6504, y: 5.29897454814, z:0.4, name: 'SexyBamboe' },
+{x: 7024, y: 5.41433035714, z:0.4, name: 'Jubei' },
+{x: 7092, y: 4.99826086957, z:0.4, name: 'Shade' },
+{x: 5778, y: 5.39951557093, z:0.4, name: 'okcya' },
+{x: 6912, y: 5.16343234323, z:0.4, name: 'Benjaz' },
+{x: 8156, y: 5.55121212121, z:0.4, name: 'ShaDow' },
+{x: 7470, y: 5.25647058824, z:0.4, name: 'Mu' },
+{x: 6164, y: 5.32474358974, z:0.4, name: 'StalCat' },
+{x: 7977, y: 5.40764900662, z:0.4, name: 'AfterLife' },
+{x: 4197, y: 6.01951111111, z:4, name: 'Baga' },
+{x: 7327, y: 5.13449275362, z:0.4, name: 'vaNN' },
+{x: 8013, y: 5.31159292035, z:0.4, name: 'NaNa' },
+{x: 6599, y: 5.353375, z:0.4, name: 'B' },
+{x: 6898, y: 4.734, z:0.4, name: 'Revy' },
+{x: 6040, y: 5.284, z:0.4, name: 'paS' },
+{x: 7563, y: 5.21048387097, z:0.4, name: 'END' },
+{x: 6895, y: 5.41971277843, z:0.4, name: 'Jerry' },
+{x: 6988, y: 5.38734375, z:0.4, name: 'M99 _ JY.' },
+{x: 5553, y: 5.30069536424, z:0.4, name: 'aabBAA' },
+{x: 3397, y: 4.94625, z:0.4, name: 'Ezio' },
+{x: 6546, y: 5.25273006135, z:0.4, name: 'C y s' },
+{x: 7087, y: 5.34458498024, z:0.4, name: 'Rose' },
+{x: 7533, y: 5.42625749358, z:0.4, name: 'Stan King' },
+{x: 8211, y: 5.41227722772, z:0.4, name: 's4' },
+{x: 7458, y: 4.80828571429, z:0.4, name: 'jiajia' },
+{x: 6705, y: 5.42906753813, z:0.4, name: 'Mawi' },
+{x: 5810, y: 5.2465468114, z:0.4, name: 'Atun' },
+{x: 6819, y: 5.41215827338, z:0.4, name: 'Akke' },
+{x: 7619, y: 5.18333333333, z:0.4, name: 'Sedoy' },
+{x: 6305, y: 5.08111111111, z:0.4, name: 'Yabish' },
+{x: 6781, y: 5.14454339623, z:0.4, name: 'ilLogic' },
+{x: 4521, y: 5.27855010661, z:0.4, name: 'buzlightyear' },
+{x: 6810, y: 5.74930953315, z:0.4, name: 'Ryze' },
+{x: 6026, y: 5.40375, z:0.4, name: 'FzFz' },
+{x: 5605, y: 5.35081624111, z:0.4, name: 'WhitePipo' },
+{x: 6430, y: 5.33230273752, z:0.4, name: 'Søgaard' },
+{x: 7315, y: 5.03791808874, z:0.4, name: 'Inflame' },
+{x: 4536, y: 5.35051112317, z:0.4, name: 'Joshy T' },
+{x: 7055, y: 5.44577060932, z:0.4, name: 'Chains' },
+{x: 1, y: 5.15676470588, z:0.4, name: 'Foㄨㄨ' },
+{x: 6586, y: 5.87090909091, z:0.4, name: 'SamH' },
+{x: 7547, y: 5.36888804265, z:0.4, name: 'Arteezy' },
+{x: 4271, y: 5.84, z:0.4, name: '86' },
+{x: 5320, y: 5.5795777027, z:0.4, name: 'boomski' },
+{x: 7550, y: 5.1404519774, z:0.4, name: 'zExBinGo' },
+{x: 4713, y: 5.59666666667, z:0.4, name: 'FLYSOLO' },
+{x: 5108, y: 5.33384615385, z:0.4, name: 'PAADA' },
+{x: 8653, y: 5.43571477311, z:0.4, name: 'Noone' },
+{x: 6375, y: 5.29007051565, z:0.4, name: 'goddam' },
+{x: 7580, y: 5.24804907975, z:0.4, name: 'ALWAYSWANNAFLY' },
+{x: 6567, y: 5.45985915493, z:0.4, name: '1' },
+{x: 6938, y: 5.56493523316, z:0.4, name: 'Rappy' },
+{x: 6037, y: 5.2772, z:0.4, name: 'Kecik Imba' },
+{x: 1, y: 5.02571428571, z:0.4, name: 'xdd' },
+{x: 9024, y: 5.43549331636, z:0.4, name: 'Ramzes666' },
+{x: 7486, y: 5.02131914894, z:0.4, name: 'fy' },
+{x: 7424, y: 5.40903846154, z:0.4, name: 'pieliedie' },
+{x: 4915, y: 5.50388888889, z:0.4, name: 'Scre4m' },
+{x: 5853, y: 5.25737749546, z:0.4, name: 'XBOCT' },
+{x: 6641, y: 5.05727272727, z:0.4, name: 'G' },
+{x: 7859, y: 5.15925287356, z:0.4, name: 'Op' },
+{x: 5191, y: 5.33138866064, z:0.4, name: 'sone' },
+{x: 5004, y: 5.39276243094, z:0.4, name: 'Frigoleet' },
+{x: 6930, y: 4.95914285714, z:0.4, name: 'Another' },
+{x: 6964, y: 5.38922557935, z:0.4, name: 'M4lem' },
+{x: 6350, y: 5.252, z:0.4, name: 'Mega' },
+{x: 7927, y: 5.36267441861, z:0.4, name: '747' },
+{x: 7649, y: 5.33256377551, z:0.4, name: '^^DragonFist^^' },
+{x: 6222, y: 5.27827586207, z:0.4, name: 'Mini' },
+{x: 6422, y: 4.96677966102, z:0.4, name: 'OB.YYF' },
+{x: 7897, y: 5.07623931624, z:0.4, name: 'Rong' },
+{x: 8637, y: 5.59178609626, z:0.4, name: 'Limmp' },
+{x: 7797, y: 5.22478045326, z:0.4, name: 'Slander' },
+{x: 6445, y: 5.42072727273, z:0.4, name: 'guanzo' },
+{x: 6987, y: 5.25378458498, z:0.4, name: 'xNova' },
+{x: 5416, y: 5.36806122449, z:0.4, name: 'MyNutz' },
+{x: 7000, y: 6.03330698287, z:4, name: 'Lil' },
+{x: 7524, y: 5.28085699797, z:0.4, name: 'Scandal' },
+{x: 6282, y: 5.39153629316, z:0.4, name: 'Blitz' },
+{x: 6974, y: 5.24996533795, z:0.4, name: 'Yol' },
+{x: 4646, y: 5.19600869025, z:0.4, name: 'Guashineen' },
+{x: 8299, y: 5.09749202976, z:0.4, name: 'Yang' },
+{x: 6483, y: 5.03722580645, z:0.4, name: 'kubo' },
+{x: 7581, y: 5.37052173913, z:0.4, name: 'Pain' },
+{x: 7113, y: 5.27421917808, z:0.4, name: 'Kingrd' },
+{x: 7516, y: 5.04524590164, z:0.4, name: 'Garder' },
+{x: 4878, y: 5.0782129743, z:0.4, name: 'Therence' },
+{x: 6773, y: 5.62923076923, z:0.4, name: '二' },
+{x: 5484, y: 5.28344660194, z:0.4, name: 'Chrillee' },
+{x: 5787, y: 5.3037254902, z:0.4, name: 'Le' },
+{x: 7290, y: 4.94, z:0.4, name: 'sharingan' },
+{x: 7436, y: 5.02741784038, z:0.4, name: 'Rabbit' },
+{x: 7594, y: 5.41564927858, z:0.4, name: 'AdmiralBulldog' },
+{x: 7011, y: 5.11587301587, z:0.4, name: 'Ayo' },
+{x: 6706, y: 5.32851142681, z:0.4, name: 'Dale' },
+{x: 7516, y: 5.02058139535, z:0.4, name: 'old eLeVeN' },
+{x: 6773, y: 5.33532024336, z:0.4, name: 'ixmike88' },
+{x: 8018, y: 5.31394301117, z:0.4, name: 'EternaLEnVy' },
+{x: 5318, y: 5.421960199, z:0.4, name: 'BRICKS' },
+{x: 7039, y: 5.31419495635, z:0.4, name: 'mason' },
+{x: 8010, y: 5.68075335397, z:0.4, name: '9Pasha' },
+{x: 8027, y: 5.10376, z:0.4, name: '@dogf1ghts' },
+{x: 6997, y: 5.31568235854, z:0.4, name: 'Kaibutsu' },
+{x: 6025, y: 5.29672443674, z:0.4, name: 'Hexen' },
+{x: 7153, y: 5.09638297872, z:0.4, name: 'Afoninje' },
+{x: 6706, y: 5.13044776119, z:0.4, name: 'RyOyr' },
+{x: 4133, y: 5.5004589372, z:0.4, name: '@TobiWanDOTA' },
+{x: 4952, y: 5.15083333333, z:0.4, name: 'smulgullig' },
+{x: 5001, y: 5.35649681529, z:0.4, name: '' },
+{x: 7737, y: 5.35835086243, z:0.4, name: 'Cr1t' },
+{x: 6519, y: 5.23151394422, z:0.4, name: 'RockSolid' },
+{x: 8187, y: 5.42037785755, z:0.4, name: 'canceL^^' },
+{x: 5983, y: 5.27160949868, z:0.4, name: 'StupidGuy' },
+{x: 6482, y: 5.14967213115, z:0.4, name: 'Xi' },
+{x: 6752, y: 5.1592519685, z:0.4, name: 'DDR' },
+{x: 5683, y: 5.39821782178, z:0.4, name: 'uNi-' },
+{x: 4858, y: 5.36300739852, z:0.4, name: 'k1ra- 长眠' },
+{x: 6702, y: 5.26354651163, z:0.4, name: 'MeTTpuM' },
+{x: 6591, y: 5.34183098592, z:0.4, name: 'MozuN -' },
+{x: 6224, y: 5.42513694802, z:0.4, name: 'Flens' },
+{x: 8002, y: 5.44354748603, z:0.4, name: 'CeMaTheSlayeR' },
+{x: 7886, y: 5.25118811881, z:0.4, name: 'Fly' },
+{x: 5922, y: 5.30255861366, z:0.4, name: 'Maelk' },
+{x: 7024, y: 5.02716814159, z:0.4, name: 'Jixing' },
+{x: 6914, y: 5.29606490872, z:0.4, name: 'ARTES' },
+{x: 5927, y: 5.40476552598, z:0.4, name: 'jobjobjob' },
+{x: 6715, y: 5.406, z:0.4, name: 'gorets' },
+{x: 4191, y: 5.56909090909, z:0.4, name: 'Sidswork' },
+{x: 7031, y: 5.74307692308, z:0.4, name: 'BurNIng' },
+{x: 7481, y: 5.38214814815, z:0.4, name: 'iceiceice' },
+{x: 8033, y: 4.90892857143, z:0.4, name: 'Flyby' },
+{x: 6257, y: 5.33442567568, z:0.4, name: 'SHANKS-' },
+{x: 7553, y: 5.30199115044, z:0.4, name: 'Liquid`BuLba' },
+{x: 1, y: 5.41298245614, z:0.4, name: 'Nova' },
+{x: 6700, y: 5.30321867322, z:0.4, name: 'Oxaien' },
+{x: 7310, y: 5.42440366972, z:0.4, name: 'jonassomfan' },
+{x: 6195, y: 5.45012903226, z:0.4, name: 'Winter' },
+{x: 8204, y: 5.20123083475, z:0.4, name: 'hFn' },
+{x: 6187, y: 5.20852367688, z:0.4, name: 'solen' },
+{x: 5251, y: 5.3482850601, z:0.4, name: 'nihis' },
+{x: 4553, y: 5.80193548387, z:0.4, name: 'Logos' },
+{x: 7005, y: 5.53464223386, z:0.4, name: 'nemphy' },
+{x: 5273, y: 5.40045992116, z:0.4, name: 'Chrysalid' },
+{x: 6979, y: 5.14148471616, z:0.4, name: 'Yao' },
+{x: 8064, y: 5.01744966443, z:0.4, name: 'OB.Zhou' },
+{x: 6706, y: 5.73804878049, z:0.4, name: 'LPC' },
+{x: 5123, y: 5.23230769231, z:0.4, name: 'Erice' },
+{x: 5454, y: 5.15062091503, z:0.4, name: 'Baga' },
+{x: 7423, y: 5.00516528926, z:0.4, name: 'rOtk' },
+{x: 7759, y: 5.27393630573, z:0.4, name: 'Jabz' },
+{x: 7344, y: 5.2931496063, z:0.4, name: 'Fenrir' },
+{x: 6051, y: 5.32349557522, z:0.4, name: 'sN' },
+{x: 7515, y: 5.37857301746, z:0.4, name: 'Sumail' },
+{x: 7005, y: 5.23379807692, z:0.4, name: 'raging-_-potato' },
+{x: 7765, y: 5.30462365591, z:0.4, name: 'zai' },
+{x: 5306, y: 5.41272058824, z:0.4, name: 'COK' },
+{x: 7529, y: 5.28786259542, z:0.4, name: 'HeStEJoE-RoTTeN' },
+{x: 7130, y: 5.40116719243, z:0.4, name: 'Kim0' },
+{x: 6171, y: 5.16450592885, z:0.4, name: 'Happy Together' },
+{x: 5156, y: 5.37628180039, z:0.4, name: 'GA' },
+{x: 8050, y: 5.13137142857, z:0.4, name: '孙正' },
+{x: 5616, y: 5.59725, z:0.4, name: 'Yousa-' },
+{x: 5016, y: 5.42644903988, z:0.4, name: 'SirActionSlacks' },
+{x: 7327, y: 5.08359550562, z:0.4, name: 'QD' },
+{x: 6186, y: 5.14824175824, z:0.4, name: 'longdd' },
+{x: 7206, y: 5.23511078287, z:0.4, name: 'Ohaiyo' },
+{x: 6029, y: 5.42607643312, z:0.4, name: 'Balot?' },
+{x: 5957, y: 5.31864893617, z:0.4, name: 'Fluff' },
+{x: 4957, y: 3.78, z:5, name: 'Enlight' },
+{x: 7463, y: 5.12751445087, z:0.4, name: 'artstyle' },
+{x: 7178, y: 4.94363636364, z:0.4, name: 'freedom' },
+{x: 7192, y: 5.32736440031, z:0.4, name: 'Aui_2000' },
+{x: 7153, y: 5.22396880416, z:0.4, name: 'y`' },
+{x: 7051, y: 5.47181736795, z:0.4, name: 'lft.chibix' },
+{x: 6801, y: 4.86769230769, z:0.4, name: 'M。' },
+{x: 7205, y: 5.37154199749, z:0.4, name: 'monkeys-forever' },
+{x: 7704, y: 5.29096446701, z:0.4, name: 'MiSeRy' },
+{x: 7765, y: 5.3347761194, z:0.4, name: 'Universe' },
+{x: 7759, y: 5.09537313433, z:0.4, name: 'JUST' },
+{x: 7694, y: 5.04114285714, z:0.4, name: 'SanSheng' },
+{x: 3285, y: 5.42382978723, z:0.4, name: 'Jurista' },
+{x: 6383, y: 5.53570621469, z:0.4, name: 'Miggi' },
+{x: 7187, y: 5.38996691481, z:0.4, name: 'Black^' },
+{x: 5243, y: 5.47435779817, z:0.4, name: 'Korok' },
+{x: 8055, y: 5.03568345324, z:0.4, name: 'uuu9' },
+{x: 5309, y: 5.20690283401, z:0.4, name: 'Nocik' },
+{x: 8203, y: 5.37357969187, z:0.4, name: 'kise -' },
+{x: 8309, y: 5.21570731707, z:0.4, name: 'Faith_Bian' },
+{x: 7234, y: 5.42552995392, z:0.4, name: 'KanGaroo' },
+{x: 6501, y: 5.17133065943, z:0.4, name: 'Greedy' },
+{x: 7790, y: 5.36312312312, z:0.4, name: 'TC' },
+{x: 6648, y: 5.29587706147, z:0.4, name: '僵硬哥' },
+{x: 5332, y: 4.9805988024, z:0.4, name: 'Yxb' },
+{x: 6378, y: 5.31228915663, z:0.4, name: 'LaKelz' },
+{x: 7042, y: 5.39141855027, z:0.4, name: 'Ax.Mo' },
+{x: 7323, y: 5.49069590968, z:0.4, name: 'eskil' },
+{x: 5957, y: 5.34165733965, z:0.4, name: '@FanofSoyeon' },
+{x: 5316, y: 4.9834375, z:0.4, name: '876' },
+{x: 7338, y: 5.27692810458, z:0.4, name: 'Reisen' },
+{x: 6888, y: 5.34008595989, z:0.4, name: 'Pablo' },
+{x: 6606, y: 5.4401980198, z:0.4, name: 'Dread' },
+{x: 5803, y: 5.16509615385, z:0.4, name: 'Cast' },
+{x: 6823, y: 5.51163418291, z:0.4, name: 'ÂVILLE' },
+{x: 8014, y: 5.37848497324, z:0.4, name: 'Garter' },
+{x: 3106, y: 5.3591773145, z:0.4, name: 'Seleri' },
+{x: 7487, y: 5.29730212766, z:0.4, name: 'Shachlo' },
+{x: 7690, y: 5.10099236641, z:0.4, name: 'Q' },
+{x: 6022, y: 5.28195121951, z:0.4, name: 'Merlini' },
+{x: 7207, y: 5.30184441301, z:0.4, name: 'Niqua' },
+{x: 6833, y: 5.46084033613, z:0.4, name: 'YamateH' },
+{x: 7205, y: 5.18750649351, z:0.4, name: 'Maybe' },
+{x: 7005, y: 4.89939393939, z:0.4, name: 'RR' },
+{x: 4400, y: 5.28, z:0.4, name: 'BABY_KIKO' },
+{x: 7530, y: 5.30945731707, z:0.4, name: 'Roddgee' },
+{x: 6114, y: 5.07764705882, z:0.4, name: 'zq' },
+{x: 7234, y: 5.35239146848, z:0.4, name: 'Five' },
+{x: 4384, y: 4.94, z:0.4, name: 'ping' },
+{x: 6081, y: 5.3984262796, z:0.4, name: 'KelThuzard' },
+{x: 7372, y: 5.24769230769, z:0.4, name: 'Liquid`KuroKy' },
+{x: 3150, y: 5.44461538462, z:0.4, name: 'XiiTuzi' },
+{x: 4130, y: 5.478, z:0.4, name: 'Korb3n' },
+{x: 4702, y: 5.51484210526, z:0.4, name: 'SUNSfan' },
+{x: 6407, y: 5.05876237624, z:0.4, name: '2Lei' },
+{x: 6259, y: 5.3313363029, z:0.4, name: 'CCnC sucks ass' },
+{x: 7004, y: 5.27017665798, z:0.4, name: 'NoiA' },
+{x: 6181, y: 5.34465587045, z:0.4, name: 'Froogoss' },
+{x: 6366, y: 5.22444444444, z:0.4, name: '小郭嘉' },
+{x: 6828, y: 5.30714285714, z:0.4, name: 'Yetian' },
+{x: 7356, y: 5.33893333333, z:0.4, name: 'MJW' },
+{x: 7601, y: 5.39288229376, z:0.4, name: 'Sneyking' },
+{x: 4374, y: 5.51886524823, z:0.4, name: 'Calv' },
+{x: 7619, y: 5.37494403429, z:0.4, name: 'SlashStrike' },
+{x: 8020, y: 5.28216423104, z:0.4, name: 'Pajkatt' },
+{x: 5406, y: 5.41187183811, z:0.4, name: 'Alpha-Omega' },
+{x: 7487, y: 5.12417910448, z:0.4, name: 'BoBoKa' },
+{x: 6626, y: 5.36787158746, z:0.4, name: 'kef' },
+{x: 7183, y: 5.32355163728, z:0.4, name: 'qojqva' },
+{x: 7447, y: 5.01435344828, z:0.4, name: 'super' },
+{x: 1, y: 5.44557377049, z:0.4, name: '小鲨鱼' },
+{x: 7192, y: 5.156, z:0.4, name: 'Ky、xY`' },
+{x: 8274, y: 5.10872180451, z:0.4, name: 'Paparazi灬' },
+{x: 7432, y: 5.31830374753, z:0.4, name: 'ThuG.' },
+{x: 7665, y: 4.75866666667, z:0.4, name: '垃圾君' },
+{x: 7949, y: 5.42060225847, z:0.4, name: 'w33' },
+{x: 5242, y: 5.33153846154, z:0.4, name: 'JaL' },
+{x: 7338, y: 5.36901655795, z:0.4, name: 'KingR?!' },
+{x: 5838, y: 5.22621848739, z:0.4, name: 'VolodyaHozyain' },
+{x: 6373, y: 5.16768535262, z:0.4, name: 'Nafari' },
+{x: 6831, y: 5.39566666667, z:0.4, name: 'Faith' },
+{x: 4703, y: 5.34888888889, z:0.4, name: 'Bumblebee' },
+{x: 4774, y: 5.75261904762, z:0.4, name: '@Sdn' },
+{x: 7207, y: 5.29645912548, z:0.4, name: 'ArsZeeqq' },
+{x: 5820, y: 5.15811965812, z:0.4, name: 'ֽֽ' },
+{x: 8023, y: 5.04796363636, z:0.4, name: 'Freeze' },
+{x: 7542, y: 5.16646153846, z:0.4, name: 'G' },
+{x: 5541, y: 5.34476744186, z:0.4, name: 'ADTR #1301' },
+{x: 6884, y: 5.35011056658, z:0.4, name: 'Slayer' },
+{x: 7090, y: 5.34191841938, z:0.4, name: 'ninjaboogie' },
+{x: 6964, y: 5.46504143646, z:0.4, name: 'Raven' },
+{x: 7050, y: 5.3807780725, z:0.4, name: 'YapzOr' },
+{x: 6893, y: 5.14354982647, z:0.4, name: 'Waratta~HeyLiz' },
+{x: 6394, y: 5.45673076923, z:0.4, name: 'Fringe' },
+{x: 6108, y: 5.32525547445, z:0.4, name: 'j4' },
+{x: 6730, y: 5.13392909897, z:0.4, name: 'Masoku' },
+{x: 5601, y: 5.28168874172, z:0.4, name: 'daFa-' },
+{x: 7109, y: 5.46977142857, z:0.4, name: 'MoonMeander' },
+{x: 7702, y: 5.56342040816, z:0.4, name: 'Chessie' },
+{x: 9155, y: 5.0966075388, z:0.4, name: 'Sccc丶' },
+{x: 7873, y: 5.38122491349, z:0.4, name: 'Swiftending' },
+{x: 6804, y: 5.09355932203, z:0.4, name: 'pyw' },
+{x: 7630, y: 5.16521212121, z:0.4, name: 'hym' },
+{x: 5064, y: 5.44128571429, z:0.4, name: 'xfreedom' },
+{x: 6836, y: 5.39859813084, z:0.4, name: 'FeiMao' },
+{x: 5893, y: 5.52685518591, z:0.4, name: 'Juice' },
+{x: 6013, y: 5.42489144317, z:0.4, name: '@ShredderDota' },
+{x: 7451, y: 5.05464788732, z:0.4, name: 'Piao' },
+{x: 6289, y: 5.30502392344, z:0.4, name: 'august-' },
+{x: 5825, y: 5.44725340136, z:0.4, name: 'Purge' },
+{x: 6154, y: 5.35691460055, z:0.4, name: 'FlyingZebra' },
+{x: 7000, y: 5.30773985488, z:0.4, name: 'SHELTER' },
+{x: 6152, y: 4.906875, z:0.4, name: 'maomao' },
+{x: 6113, y: 5.02059701493, z:0.4, name: '龙丶' },
+{x: 6913, y: 5.39894736842, z:0.4, name: 'Silent' },
+{x: 4437, y: 5.0641025641, z:0.4, name: '@xz_lo9d' },
+{x: 6022, y: 5.42571428571, z:0.4, name: 'ZeuS' },
+{x: 2246, y: 5.03333333333, z:0.4, name: 'BigStar' },
+{x: 7684, y: 5.41244163424, z:0.4, name: 'MSS' },
+{x: 6366, y: 5.24318627451, z:0.4, name: '' },
+{x: 6073, y: 5.91135233918, z:0.4, name: 'Loda' },
+{x: 8864, y: 4.8895, z:0.4, name: 'zhizhizhi' },
+{x: 5054, y: 5.45573770492, z:0.4, name: 'dabeliuteef' },
+{x: 5313, y: 5.18, z:0.4, name: 'SusieQ' },
+{x: 7180, y: 5.0850390625, z:0.4, name: 'mikasa' },
+{x: 7247, y: 5.32734442524, z:0.4, name: 'Sehny' },
+{x: 7711, y: 5.28950511094, z:0.4, name: 'ComeWithMe' },
+{x: 7508, y: 5.31315912232, z:0.4, name: 'Zyzzy' },
+{x: 6871, y: 5.02943396226, z:0.4, name: 'Ling' },
+{x: 7169, y: 5.27802929427, z:0.4, name: 'Febby' },
+{x: 6471, y: 5.24751135332, z:0.4, name: 'cantwinwithme' },
+{x: 7216, y: 5.12079646018, z:0.4, name: 'LuLu^^' },
+{x: 1, y: 5.27601769912, z:0.4, name: 'Mags' },
+{x: 8095, y: 5.06115226337, z:0.4, name: 'Xxs' },
+{x: 7965, y: 5.09893258427, z:0.4, name: 'Xiao8' },
+{x: 6445, y: 5.12107296137, z:0.4, name: '丶M31' },
+{x: 6685, y: 5.3885215541, z:0.4, name: 'Ouker' },
+{x: 6269, y: 5.38959494612, z:0.4, name: 'syndereN' },
+{x: 5789, y: 5.33745575221, z:0.4, name: 'Amoment' },
+{x: 6069, y: 5.26976315789, z:0.4, name: 'Kotarō.sr4ever' },
+{x: 6673, y: 5.13, z:0.4, name: 'For.More' },
+{x: 5148, y: 5.30415204678, z:0.4, name: 'DR_ALI' },
+{x: 7286, y: 5.24396856582, z:0.4, name: 'Mitch' },
+{x: 6361, y: 5.4520952381, z:0.4, name: 'Qing' },
+{x: 1, y: 5.03454545455, z:0.4, name: 'ping' },
+{x: 6478, y: 5.211, z:0.4, name: 'yfsN7' },
+{x: 1, y: 4.39692307692, z:0.4, name: 'RitteR' },
+{x: 7647, y: 5.37959361393, z:0.4, name: 'Zfreek' },
+{x: 4365, y: 5.74634615385, z:0.4, name: 'LoFA' },
+{x: 6957, y: 5.28419191919, z:0.4, name: 'Chu' },
+{x: 7642, y: 5.5768, z:0.4, name: 'banana' },
+{x: 6535, y: 5.18633522727, z:0.4, name: 'Kingteka' },
+{x: 7295, y: 5.30891663465, z:0.4, name: 'Tirsn' },
+{x: 8042, y: 5.34541720991, z:0.4, name: 'MidOne' },
+{x: 6516, y: 5.23873595506, z:0.4, name: 'Droid' },
+{x: 7130, y: 5.24239130435, z:0.4, name: 'DJ' },
+{x: 6828, y: 5.04737804878, z:0.4, name: 'qianqian' },
+{x: 7284, y: 5.08151515152, z:0.4, name: 'Ferrari_430' },
+{x: 6945, y: 5.29607038781, z:0.4, name: 'iLTW' },
+{x: 2880, y: 5.17, z:0.4, name: 'P-' },
+{x: 5394, y: 5.33525679758, z:0.4, name: 'LighTofHeaveN' },
+{x: 8422, y: 5.33512554585, z:0.4, name: 'Xcalibur' },
+{x: 5266, y: 5.50272727273, z:0.4, name: 'AA' },
+{x: 8292, y: 5.28684806034, z:0.4, name: 'QO' },
+{x: 7635, y: 5.00693877551, z:0.4, name: 'MMY!' },
+{x: 1, y: 4.9, z:0.4, name: 'Zizou' },
+{x: 7549, y: 5.07633766234, z:0.4, name: '王昕' },
+{x: 5624, y: 5.06677419355, z:0.4, name: '121~' },
+{x: 5829, y: 5.09854651163, z:0.4, name: 'Badmen' },
+{x: 7513, y: 5.07506493506, z:0.4, name: 'RodjER' },
+{x: 6235, y: 5.40513274336, z:0.4, name: 'DeMoN' },
+{x: 6019, y: 5.243996139, z:0.4, name: 'Fly' },
+{x: 4372, y: 5.16285714286, z:0.4, name: 'suorg' },
+{x: 7666, y: 5.26463917526, z:0.4, name: 'Ditya Ra' },
+{x: 7283, y: 5.43749626977, z:0.4, name: 'Etakaka' },
+{x: 4267, y: 5.31382352941, z:0.4, name: 'Ivan' },
+{x: 8562, y: 5.16861471861, z:0.4, name: 'ghost' },
+{x: 4585, y: 5.46, z:0.4, name: 'ReBorN.' },
+{x: 6786, y: 5.02233624454, z:0.4, name: 'Stella' },
+{x: 7178, y: 5.76503092784, z:0.4, name: 'Liquid`MATUMBAMAN' },
+{x: 6582, y: 5.36997875053, z:0.4, name: 'Godot' },
+{x: 8187, y: 5.26108040201, z:0.4, name: 'Saksa' },
+{x: 3731, y: 5.34196610169, z:0.4, name: 'ReiNNNN' },
+{x: 7751, y: 5.43470670391, z:0.4, name: 'Brax' },
+{x: 7390, y: 5.34831288344, z:0.4, name: 'FeinerHerr' },
+{x: 7192, y: 5.27777777778, z:0.4, name: 'Net' },
+{x: 7082, y: 5.081, z:0.4, name: 'Sylar' },
+{x: 6653, y: 5.38896907216, z:0.4, name: 'Ysaera' },
+{x: 5613, y: 5.34, z:0.4, name: 'bbkdta' },
+{x: 5495, y: 5.30762252346, z:0.4, name: 'SecretWarrioR' },
+{x: 8003, y: 5.4316249735, z:0.4, name: 'Moo' },
+{x: 6918, y: 4.724, z:0.4, name: 'WHPH' },
+{x: 6819, y: 5.45345382286, z:0.4, name: 'SsaSpartan' },
+{x: 6121, y: 5.48643189369, z:0.4, name: 'Lubby' },
+{x: 6519, y: 5.40599733155, z:0.4, name: 'PPD' },
+{x: 4941, y: 5.42836170213, z:0.4, name: '' },
+{x: 8345, y: 5.32073854447, z:0.4, name: 'fng' },
+{x: 5306, y: 5.26064516129, z:0.4, name: 'Boombacs' },
+{x: 6542, y: 5.25367346939, z:0.4, name: 'hyhy' },
+{x: 4952, y: 5.39575471698, z:0.4, name: 'nick' },
+{x: 5648, y: 5.00081632653, z:0.4, name: 'Fyms' },
+{x: 7282, y: 5.37898340249, z:0.4, name: 'Biver' },
+{x: 6500, y: 5.4423922734, z:0.4, name: 'Jason' },
+{x: 7974, y: 5.21363636364, z:0.4, name: '! SoNNeikO !' },
+{x: 6575, y: 5.31688463176, z:0.4, name: 'Bloody Nine' },
+{x: 5891, y: 5.31264822134, z:0.4, name: 'CapitanLove' },
+{x: 7138, y: 5.14084210526, z:0.4, name: 'Iceberg' },
+{x: 6120, y: 5.35192810458, z:0.4, name: 'DA' },
+{x: 7372, y: 5.29144014085, z:0.4, name: 'Liquid`MinD_ContRoL' },
+{x: 7301, y: 5.5759085213, z:0.4, name: 'Tims' },
+{x: 7999, y: 5.398761819, z:0.4, name: 'Ace' },
+{x: 6498, y: 5.00298507463, z:0.4, name: 'XiaoXiaoSala' },
+{x: 6570, y: 5.30582956766, z:0.4, name: 'Eagle' },
+{x: 4969, y: 5.30283375999, z:0.4, name: '「ｈｗａ」' },
+{x: 7492, y: 5.22672839506, z:0.4, name: 'Puppey' },
+{x: 4639, y: 5.30148215093, z:0.4, name: 'Beef' },
+{x: 6667, y: 5.28765531062, z:0.4, name: 'grizine' },
+{x: 7544, y: 5.09789772727, z:0.4, name: 'xiaofu' },
+{x: 5377, y: 5.03666666667, z:0.4, name: 'zxc' },
+{x: 7610, y: 5.29047106326, z:0.4, name: 'iMBa' },
+{x: 7156, y: 5.0254587156, z:0.4, name: 'Demons' },
+{x: 5948, y: 5.33760153912, z:0.4, name: 'nimble navigator' },
+{x: 7695, y: 5.0565158371, z:0.4, name: 'ZSMJ' },
+{x: 6047, y: 5.33410526316, z:0.4, name: 'Steffstyle' },
+{x: 7816, y: 5.32087933607, z:0.4, name: 'jk' },
+{x: 8045, y: 5.35297767857, z:0.4, name: 'Ghostik' },
+{x: 8678, y: 4.98615384615, z:0.4, name: '' },
+{x: 6567, y: 5.01621621622, z:0.4, name: 'MyPro' },
+{x: 6465, y: 5.4788772846, z:0.4, name: 'KoaLa' },
+{x: 5603, y: 5.43588817445, z:0.4, name: 'Jenkins' },
+{x: 1, y: 5.36671581769, z:0.4, name: '王小猪.' },
+{x: 6106, y: 5.30851834431, z:0.4, name: '`wB' },
+{x: 7442, y: 4.99366197183, z:0.4, name: '跳刀跳刀丶' },
+{x: 7704, y: 5.56646191646, z:0.4, name: 'Resolut1on' },
+{x: 7139, y: 5.52818589026, z:0.4, name: '.' },
+{x: 6767, y: 5.18509188361, z:0.4, name: 'Vlaicu' },
+{x: 4557, y: 5.50352941176, z:0.4, name: 'tnt' },
+{x: 5871, y: 5.04087378641, z:0.4, name: 'Lin-hypnotic' },
+{x: 7371, y: 5.32745603751, z:0.4, name: 'tmw' },
+{x: 7072, y: 5.39920333839, z:0.4, name: 'RyuuDotA' },
+{x: 5228, y: 5.35061818182, z:0.4, name: 'Dancing Dragon' },
+{x: 6178, y: 5.34858267717, z:0.4, name: 'c7a551c' },
+{x: 5829, y: 5.27091168091, z:0.4, name: 'g0g1' },
+{x: 6221, y: 5.0468852459, z:0.4, name: '佞臣' },
+{x: 7194, y: 5.06114754098, z:0.4, name: 'Fan' },
+{x: 8992, y: 5.10177777778, z:0.4, name: 'Ame' },
+{x: 5628, y: 5.49686746988, z:0.4, name: 'Cak3z' },
+{x: 7615, y: 5.22003475135, z:0.4, name: 'Sword' },
+{x: 7551, y: 5.34122327791, z:0.4, name: 'Bignum' },
+{x: 6880, y: 5.08437507788, z:0.4, name: 'Mandy' },
+{x: 7074, y: 5.4002359882, z:0.4, name: 'Xcalibur' },
+{x: 7346, y: 5.06030612245, z:0.4, name: 'XZ' },
+{x: 4647, y: 5.97, z:0.4, name: '' },
+{x: 7074, y: 5.08154574132, z:0.4, name: 'waixi' },
+{x: 7830, y: 5.4169023391, z:0.4, name: 'Meracle' },
+{x: 7108, y: 5.33830622204, z:0.4, name: '4dr' },
+{x: 7317, y: 5.3160120634, z:0.4, name: 'SVG' },
+{x: 6757, y: 4.87473684211, z:0.4, name: '..' },
+{x: 6228, y: 5.34056145675, z:0.4, name: 'JessieVash*' },
+{x: 7078, y: 5.29683124539, z:0.4, name: 'Mad' },
+{x: 7162, y: 4.94, z:0.4, name: 'Lin' },
+{x: 7019, y: 5.06175, z:0.4, name: 'NeaR' },
+{x: 3930, y: 4.82666666667, z:0.4, name: '' },
+{x: 6918, y: 5.15123563218, z:0.4, name: 'FLYSOLO' },
+{x: 4396, y: 5.28444073456, z:0.4, name: 'inphinity' },
+{x: 6434, y: 5.38280397022, z:0.4, name: 'jeppins' },
+{x: 7019, y: 5.18332075472, z:0.4, name: 'eyyou' },
+{x: 7310, y: 5.38876344086, z:0.4, name: 'chshrct' },
+{x: 6018, y: 5.45706552707, z:0.4, name: 'DoN | XwaN' },
+{x: 7274, y: 5.03022988506, z:0.4, name: '......' },
+{x: 7868, y: 5.17444444444, z:0.4, name: 'Maden' },
+{x: 7110, y: 5.30685114504, z:0.4, name: 'Yabyooo' },
+{x: 7753, y: 5.06297658863, z:0.4, name: 'Puer tea' },
+{x: 7822, y: 5.32731601732, z:0.4, name: 'kpii' },
+{x: 4947, y: 5.58333333333, z:0.4, name: 'Docy' },
+{x: 5482, y: 5.1849461642, z:0.4, name: 'c4t' },
+{x: 5896, y: 4.84923076923, z:0.4, name: 'Speed!' },
+{x: 6239, y: 5.00285714286, z:0.4, name: 'ifrit' },
+{x: 7912, y: 5.17549863388, z:0.4, name: 'VANSKOR' },
+{x: 7051, y: 5.34375451264, z:0.4, name: 'The_apathy' },
+{x: 7357, y: 5.31471870248, z:0.4, name: 'Mambos' },
+{x: 6512, y: 5.3532, z:0.4, name: 'PauL' },
+{x: 7103, y: 5.03937728938, z:0.4, name: 'kaidou' },
+{x: 5601, y: 5.08026490066, z:0.4, name: 'Mrrr' },
+{x: 7016, y: 5.28488912355, z:0.4, name: 'xuan' },
+{x: 4484, y: 6.52, z:4, name: 'TunX' },
+{x: 5976, y: 4.94352941176, z:0.4, name: 'kabu' },
+{x: 5101, y: 5.32810526316, z:0.4, name: 'JotM' },
+{x: 6757, y: 5.4397315159, z:0.4, name: 'mlw' },
+{x: 7171, y: 5.12924242424, z:0.4, name: 'Kapron' },
+{x: 5735, y: 4.95, z:0.4, name: 'balloon' },
+{x: 3401, y: 5.025, z:0.4, name: '' },
+{x: 6543, y: 5.28462068966, z:0.4, name: 'JoHnNy' },
+{x: 6574, y: 5.47939597315, z:0.4, name: 'SingSing' },
+{x: 6596, y: 5.29759493671, z:0.4, name: 'BogdawaDJan!' },
+{x: 6868, y: 5.29808252427, z:0.4, name: 'ah fu' },
+{x: 5017, y: 5.30387755102, z:0.4, name: 'KGB' },
+{x: 2790, y: 5.54496212121, z:0.4, name: 'Meep Merp' },
+{x: 6264, y: 4.87453488372, z:0.4, name: '水友' },
+{x: 6386, y: 5.06203219316, z:0.4, name: 'monkey' },
+{x: 7388, y: 5.36914159941, z:0.4, name: 'Patsoul' },
+{x: 6286, y: 5.34808362369, z:0.4, name: 'strangby' },
+{x: 8207, y: 5.31882265718, z:0.4, name: 'Ana' },
+{x: 4223, y: 5.38832474227, z:0.4, name: 'WhatIsHip' },
+{x: 5105, y: 5.40769230769, z:0.4, name: 'GIFTIG!' },
+{x: 2920, y: 5.45621325648, z:0.4, name: 'Mavav' },
+{x: 7618, y: 5.46, z:0.4, name: 'Tzy丶' },
+{x: 8015, y: 5.36775707384, z:0.4, name: 'Flee' },
+{x: 7192, y: 5.2052, z:0.4, name: 'Buugi' },
+{x: 8211, y: 5.13151960784, z:0.4, name: '633' },
+{x: 6866, y: 5.19770491803, z:0.4, name: 'yoky-' },
+{x: 6331, y: 5.39330810811, z:0.4, name: 'OmegaPwner' },
+{x: 7591, y: 5.47967105263, z:0.4, name: 'Madara' },
+{x: 7420, y: 5.21123188406, z:0.4, name: 'LaNcE' },
+{x: 8076, y: 5.62102362205, z:0.4, name: 'iceice' },
+{x: 7130, y: 5.59978021978, z:0.4, name: 'Gabbi' },
+{x: 4940, y: 5.41500738552, z:0.4, name: 'Windx' },
+{x: 7284, y: 5.40068789217, z:0.4, name: 'bOne7' },
+{x: 5564, y: 5.41726141079, z:0.4, name: 'DuRuM' },
+{x: 5551, y: 5.40102880658, z:0.4, name: 'BlueberryNinja' },
+{x: 7567, y: 5.11855614973, z:0.4, name: 'InJuly' },
+{x: 6717, y: 5.27381355932, z:0.4, name: 'ChuaN' },
+{x: 6528, y: 5.39272542648, z:0.4, name: 'KheZu' },
+{x: 6354, y: 5.33585266821, z:0.4, name: 'WwieWambo' },
+{x: 7045, y: 5.29192315429, z:0.4, name: 'Leostyle' },
+{x: 3827, y: 5.77652362375, z:0.4, name: 'Hotaruz' },
+{x: 6958, y: 5.41945338758, z:0.4, name: 'Seleri' },
+{x: 7243, y: 5.26159771755, z:0.4, name: 'Teehee' },
+{x: 6799, y: 5.31922068141, z:0.4, name: 'Boris' },
+{x: 7590, y: 5.35423106948, z:0.4, name: 'fn' },
+{x: 4754, y: 5.34895452169, z:0.4, name: 'αи∂υяιl' },
+{x: 6925, y: 4.97333333333, z:0.4, name: 'Key' },
+{x: 7886, y: 5.15563636364, z:0.4, name: 'n0tail' },
+{x: 7049, y: 5.32051655629, z:0.4, name: 'Moon' },
+{x: 7375, y: 5.39604009528, z:0.4, name: 'Velo' },
+{x: 6625, y: 5.38153333333, z:0.4, name: 'NutZ' },
+{x: 7025, y: 5.01009009009, z:0.4, name: 'Sakata' },
+{x: 5141, y: 5.23292397661, z:0.4, name: 'vaalix' },
+{x: 6378, y: 5.22083769634, z:0.4, name: 'Boombell' },
+{x: 7037, y: 5.01142857143, z:0.4, name: 'QQQ' },
+{x: 6393, y: 5.24455205811, z:0.4, name: 'KUKU^' },
+{x: 6891, y: 5.34206650831, z:0.4, name: 'Pingvincek' },
+{x: 7076, y: 5.04712328767, z:0.4, name: 'Hao' },
+{x: 8074, y: 5.02444444444, z:0.4, name: 'Srf' },
+{x: 8112, y: 5.32295041194, z:0.4, name: 'Chappie' },
+{x: 7807, y: 4.9784, z:0.4, name: '290' },
+{x: 6918, y: 4.91520249221, z:0.4, name: 'KEVZ' },
+{x: 6853, y: 5.47563265306, z:0.4, name: '04' },
+{x: 4439, y: 5.38672757475, z:0.4, name: 'Adobe' },
+{x: 4200, y: 5.34486666667, z:0.4, name: 'Shion' },
+{x: 8308, y: 5.02299212598, z:0.4, name: 'June' },
+{x: 5875, y: 4.9709929078, z:0.4, name: 'JDH' },
+{x: 7402, y: 5.34856386109, z:0.4, name: '✔ S ♕ n i c' },
+{x: 7445, y: 5.4077412731, z:0.4, name: 'Franceour' },
+{x: 7305, y: 5.3815677537, z:0.4, name: 'LeBronDota' },
+{x: 7840, y: 5.281090697, z:0.4, name: 'Iwo' },
+{x: 7102, y: 5.34123264076, z:0.4, name: 'Guy who streams losing qualis' },
+{x: 6351, y: 5.29414473684, z:0.4, name: 'Døden' },
+{x: 3851, y: 5.28714285714, z:0.4, name: '韩老魔' },
+{x: 8190, y: 5.32606188282, z:0.4, name: 'ainiasaad' },
+{x: 2656, y: 5.43945891784, z:0.4, name: '小蝴蝶' },
+{x: 4916, y: 5.47015544041, z:0.4, name: 'theend' },
+{x: 7106, y: 5.37203539823, z:0.4, name: 'poop' },
+{x: 6827, y: 5.11111111111, z:0.4, name: 'Ice' },
+{x: 7268, y: 5.00337078652, z:0.4, name: 'Scofield' },
+{x: 7647, y: 5.4252520436, z:0.4, name: 'swindlezz' },
+{x: 7442, y: 5.18637926738, z:0.4, name: '≈Ω≈Ω≈' },
+{x: 5989, y: 5.0564516129, z:0.4, name: '-_-!' },
+{x: 5008, y: 4.77, z:0.4, name: 'YAn' },
+{x: 4654, y: 5.17223946785, z:0.4, name: 'tavo' },
+{x: 7470, y: 5.43167517007, z:0.4, name: 'EGM' },
+{x: 7992, y: 5.40601211509, z:0.4, name: 'Ah Jit' },
+{x: 6500, y: 5.37747643564, z:0.4, name: 'Jay' },
+{x: 7303, y: 5.06225806452, z:0.4, name: 'sss' },
+{x: 7008, y: 5.28878787879, z:0.4, name: 'dad' },
+{x: 6940, y: 5.27126315789, z:0.4, name: 'DXM' },
+{x: 6990, y: 5.44684210526, z:0.4, name: 'Hawaiin Fire!!' },
+{x: 6032, y: 5.445, z:0.4, name: 'Kingj' },
+{x: 7648, y: 5.43143343258, z:0.4, name: 'MiLAN' },
+{x: 7601, y: 5.00691056911, z:0.4, name: 'liekkas' },
+{x: 4568, y: 5.26291878173, z:0.4, name: 'ARBI' },
+{x: 4938, y: 5.36590909091, z:0.4, name: 'reelo' },
+{x: 7372, y: 5.36562893082, z:0.4, name: 'Liquid`Miracle-' },
+{x: 6395, y: 5.39262396694, z:0.4, name: 'Capitalist' },
+{x: 5212, y: 5.3344622093, z:0.4, name: 'FallenHana' },
+{x: 8771, y: 5.22676535899, z:0.4, name: 'IllidanSTR SF46' },
+{x: 7545, y: 5.38518392445, z:0.4, name: 'Wagamama' },
+{x: 6290, y: 5.1427826087, z:0.4, name: 'Navy.March' },
+{x: 7891, y: 5.34375447737, z:0.4, name: 'rmN-' },
+{x: 6188, y: 5.29890274314, z:0.4, name: 'www1234543' },
+{x: 8503, y: 5.33582191781, z:0.4, name: 'MP' },
+{x: 7288, y: 5.06241666667, z:0.4, name: '' },
+{x: 7520, y: 5.29777292576, z:0.4, name: 'Kefka' },
+{x: 6743, y: 5.18915684831, z:0.4, name: 'GGwpLanaya' },
+{x: 6760, y: 5.39724137931, z:0.4, name: 'LT' },
+{x: 8993, y: 5.01814102564, z:0.4, name: 'kaka' },
+{x: 6235, y: 5.43568069307, z:0.4, name: 'unicornxoxo' },
+{x: 7479, y: 5.36722222222, z:0.4, name: 'Era' },
+{x: 3950, y: 5.50097244733, z:0.4, name: 'Sheever' },
+{x: 7005, y: 5.48285714286, z:0.4, name: 'Skylark' },
+{x: 6504, y: 5.03933333333, z:0.4, name: 'prettyhaw' },
+{x: 6039, y: 5.2252956636, z:0.4, name: 'Saber ~_~' },
+{x: 6317, y: 5.57221052632, z:0.4, name: 'wayto' },
+{x: 4504, y: 5.53714285714, z:0.4, name: 'KodoKTempuR' },
+{x: 7758, y: 4.9956, z:0.4, name: 'Sen' },
+{x: 6057, y: 5.37439037153, z:0.4, name: 'fROZEN' },
+{x: 6015, y: 5.40073130194, z:0.4, name: 'Eosin' },
+{x: 8189, y: 5.4178358209, z:0.4, name: 'ddz`' },
+{x: 6487, y: 5.44424616536, z:0.4, name: 'Fear' },
+{x: 5550, y: 5.34495238095, z:0.4, name: 'LEGENDARY' },
+{x: 6193, y: 5.38461770624, z:0.4, name: 'Ř€ŁĬĈ' },
+{x: 6516, y: 5.46441758242, z:0.4, name: 'Trixi' },
+{x: 7137, y: 5.36985330269, z:0.4, name: 'Timado' },
+{x: 7264, y: 5.31279116466, z:0.4, name: 'Doctor' },
+{x: 7007, y: 5.56940298507, z:0.4, name: 'xy-' },
+{x: 7005, y: 5.18632231405, z:0.4, name: 'Julz*' },
+{x: 7726, y: 5.35313182674, z:0.4, name: 'Babyknight' },
+{x: 5351, y: 5.26532, z:0.4, name: 'Xtinct' },
+{x: 6784, y: 5.339, z:0.4, name: 'Fogged' },
+{x: 6959, y: 4.94966101695, z:0.4, name: 'spotty-qcc' },
+{x: 6443, y: 5.52466798811, z:0.4, name: 'tigerlily' },
+{x: 6219, y: 5.27966101695, z:0.4, name: 'InsidiousC' },
+{x: 1, y: 5.46235294118, z:0.4, name: 'plzgogame' },
+{x: 5519, y: 5.18, z:0.4, name: 'Yaj!' },
+{x: 7919, y: 5.36608910891, z:0.4, name: 'Dendi' },
+{x: 6137, y: 5.25772727273, z:0.4, name: 'Nexus' },
+{x: 5710, y: 5.02512820513, z:0.4, name: 'xLucky' },
+{x: 7693, y: 4.99266666667, z:0.4, name: 'Ch' },
+{x: 6220, y: 5.28660714286, z:0.4, name: 'Heen' },
+{x: 6039, y: 5.35319607102, z:0.4, name: 'eQual' },
+{x: 6934, y: 5.06436090226, z:0.4, name: 'MuShi' },
+{x: 6841, y: 5.08345679012, z:0.4, name: 'old LaNm' },
+{x: 7778, y: 5.48086451359, z:0.4, name: 'Beesa' },
+{x: 6257, y: 5.29822418136, z:0.4, name: '343' },
+{x: 6312, y: 5.44711484594, z:0.4, name: 'ks' },
+{x: 6571, y: 5.31179098826, z:0.4, name: 'Misha' },
+{x: 6681, y: 5.38927966102, z:0.4, name: 'Goblak' },
+{x: 6551, y: 5.05677631579, z:0.4, name: 'shaker' },
+{x: 5809, y: 4.94, z:0.4, name: '21`' }
+            ]
+        }]
+
+    });
+});
+//]]> 
+
+</script>
+
+  
+</head>
+
+<body>
+
+<ul class="topnav" id="myTopnav">
+
+  <li><a class="active" href="https://dancoconetu.github.io/dotasocialgraphs">More than 50 games based on region</a></li>
+  <li><a href="https://dancoconetu.github.io/dotasocialgraphs/index2.html">More than 100 games based on region</a></li>
+  <li><a href="https://dancoconetu.github.io/dotasocialgraphs/index3.html">More than 50 games based on MMR</a></li>
+  <li><a href="https://dancoconetu.github.io/dotasocialgraphs/index4.html">Players and Heroes</a></li>
+  <li><a href="https://dancoconetu.github.io/dotasocialgraphs/index5.html">Sentiment score mapped on ranking</a></li>
+    <li><a href="http://nbviewer.jupyter.org/urls/dancoconetu.github.io/dotasocialgraphs/ExplainerNotebook.ipynb"> LINK TO NOTEBOOK</a></li>
+  <li class="icon">
+    <a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()">☰</a>
+  </li>
+</ul>
+
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<div id="container" style="height: 400px; min-width: 310px; max-width: 600px; margin: 0 auto"></div>
+  
+</body>
+
+</html>
+
