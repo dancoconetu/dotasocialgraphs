@@ -8,7 +8,7 @@
   <script type="text/javascript" src="vis.js"></script>
   <link type="text/css" rel="stylesheet" href="vis-network.min.css">
 
-  <script src="dota4.js"></script>
+  <script src="heroes.js"></script>
 
   <style type="text/css">
     #mynetwork {
@@ -16,7 +16,18 @@
       height: 800px;
       border: 1px solid lightgray;
     }
-		body {margin:0;}
+	#details {
+      width: 1000px;
+      height: 800px;
+      border: 1px solid lightgray;
+    }
+	#players {
+      width: 1368px;
+      height: 800px;
+      border: 1px solid lightgray;
+    }
+	
+	body {margin:0;}
 ul.topnav {
   list-style-type: none;
   margin: 0;
@@ -67,6 +78,9 @@ ul.topnav li.icon {display: none;}
 }
   </style>
   <script src="googleAnalytics.js"></script>
+    <link href="vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-61231638-1', 'auto');ga('send', 'pageview');</script></head>
+
 </head>
 
 <body>
@@ -79,26 +93,37 @@ ul.topnav li.icon {display: none;}
     <a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()">☰</a>
   </li>
 </ul>
+
 <h2>Dota 2 Network of Pros</h2>
 
 <div style="width:700px; font-size:14px;">
   
-  Here we have all the players that played over 100 games with any other player. Links are in between them. Based on the region that they have the most games, players have received some colors
+  Here we have all the players that played over 50 games with any other player. Links are in between them. Based on the region that they have the most games, players have received some colors
   
   
 </div>
+<table>
+<tr>
+<td>
+<div id="mynetwork">your content</div>
+</td>
+<td>
+<div id="info">Click a node to get info</div>
+</td>
+</tr>
+</table>   
 
-<div id="mynetwork"></div>
-<div id="players"></div>
+
 <script type="text/javascript">
   var network;
 
-var network;
+
   var allNodes;
   var highlightActive = false;
 
   var nodesDataset = new vis.DataSet(nodes); // these come from WorldCup2014.js
   var edgesDataset = new vis.DataSet(edges); // these come from WorldCup2014.js
+  var heroes = new vis.DataSet(heroes);
   function redrawAll() {
     // remove positoins
    
@@ -160,45 +185,24 @@ var network;
     network = new vis.Network(container, data, options);
 network.on("click", function (params) {
   console.log(params);
+allNodes = nodesDataset.get({returnType:"Object"});
 
+    network.on("click",neighbourhoodHighlight);
 });
-var container3 = document.getElementById('players');
-  items3 =[];
-  var players = "";
-  var counter=0;
-    for (var nodeId in allNodes)
-	{
-	
-	//var connectedNodes = network.getConnectedNodes(allNodes[nodeId]);
-	//if (connectedNodes.length>90)
-	if (allNodes[nodeId].value/5 >= 40)
-	{   players+= "Name: "+ allNodes[nodeId].label + "," + "Edges:" + allNodes[nodeId].value/5 + ",Region:" +allNodes[nodeId].group +"<br>";
-		items3[counter] = {x:allNodes[nodeId].label, y:allNodes[nodeId].value/5}
-	}
-	}
 
-    var dataset3 = new vis.DataSet(items3);
-    var options3 = {
-        style:'bar',
-        barChart: {width:10, align:'center'}, // align: left, center, right
-        
-        
-    };
-	console.log(items3);
-    //var graph2d = new vis.Graph2d(container3, items3, options3);
-	container3.innerHTML = players;
+
+
+
  
 
 
 
 
 
-    // get a JSON object
- 
-  
+   
   }
   
-  
+    
    function neighbourhoodHighlight(params) {
     // if something is selected:
     if (params.nodes.length > 0) {
@@ -206,7 +210,10 @@ var container3 = document.getElementById('players');
       var i,j;
       var selectedNode = params.nodes[0];
       var degrees = 2;
-
+      var info = document.getElementById('info');
+	  
+	  allHeroes = heroes.get({returnType:"Object"});
+	  
       // mark all nodes as hard to read.
       for (var nodeId in allNodes) {
         allNodes[nodeId].color = 'rgba(200,200,200,0.5)';
@@ -217,7 +224,11 @@ var container3 = document.getElementById('players');
       }
       var connectedNodes = network.getConnectedNodes(selectedNode);
       var allConnectedNodes = [];
-
+      var s= "Selected Player's name: " + "<bold>" + allHeroes[selectedNode].player +"</bold>"  ; 
+	  s+= "<br>" + "Number of heroes in top: " + connectedNodes.length; 
+	  s+= "<br>" + "Similar Player:" + allHeroes[selectedNode].similar + "<br>" + "Similar Hero Pool: " + allHeroes[selectedNode].heroes;
+	  
+	  info.innerHTML= s;
       // get the second degree nodes
       for (i = 1; i < degrees; i++) {
         for (j = 0; j < connectedNodes.length; j++) {

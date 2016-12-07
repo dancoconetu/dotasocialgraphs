@@ -1,0 +1,999 @@
+<!doctype html>
+<!-- saved from url=(0044)http://kenedict.com/networks/worldcup14/vis/ , thanks Andre!-->
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF8">
+  <title>Dota 2 Network</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+  <script type="text/javascript" src="vis.js"></script>
+  <link type="text/css" rel="stylesheet" href="vis-network.min.css">
+
+  <script src="dotaMMR.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+  <style type="text/css">
+    #mynetwork {
+      width: 1368px;
+      height: 800px;
+      border: 1px solid lightgray;
+    }
+	#details {
+      width: 1368px;
+      height: 800px;
+      border: 1px solid lightgray;
+    }
+	#players {
+      width: 1368px;
+      height: 800px;
+      border: 1px solid lightgray;
+    }
+	#WTF {
+      width: 1368px;
+      height: 800px;
+      border: 1px solid lightgray;
+    }
+	#MMRdistribution {
+      width: 1368px;
+      height: 800px;
+      border: 1px solid lightgray;
+    }
+		body {margin:0;}
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+  display: inline-block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+ul.topnav li a:hover {background-color: #555;}
+
+ul.topnav li.icon {display: none;}
+
+@media screen and (max-width:680px) {
+  ul.topnav li:not(:first-child) {display: none;}
+  ul.topnav li.icon {
+    float: right;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width:680px) {
+  ul.topnav.responsive {position: relative;}
+  ul.topnav.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  ul.topnav.responsive li {
+    float: none;
+    display: inline;
+  }
+  ul.topnav.responsive li a {
+    display: block;
+    text-align: left;
+  }
+}
+  </style>
+  <script src="googleAnalytics.js"></script>
+    <link href="vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-61231638-1', 'auto');ga('send', 'pageview');</script></head>
+
+</head>
+
+<body>
+<ul class="topnav" id="myTopnav">
+  <li><a class="active" href="https://dancoconetu.github.io/dotasocialgraphs/index.html">Main</a></li>
+  <li><a href="https://dancoconetu.github.io/dotasocialgraphs/index2.html">News</a></li>
+  <li><a href="https://dancoconetu.github.io/dotasocialgraphs/index3.html">Contact</a></li>
+  <li><a href="https://dancoconetu.github.io/dotasocialgraphs/index4.html">2</a></li>
+  <li class="icon">
+    <a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()">☰</a>
+  </li>
+</ul>
+<h2>Dota 2 Network of Pros</h2>
+
+<div style="width:700px; font-size:14px;">
+  
+  Here we have all the players that played over 50 games with any other player. Links are in between them. Based on the region that they have the most games, players have received some colors
+  
+  
+</div>
+
+<div id="mynetwork"></div>
+<div> </div>
+<div id="details"></div>
+<div id="WTF" />
+<div id="MMRdistribution"   />
+<div>Top players that have more than 90 edges</div>
+<div id="players"></div>
+<div>What if teams were created based on people's average winrate with each other?</div>
+<div id="winrate">
+Team  1 <br>
+Id:  116030980 , Name:  GetovaS- , Ranking:  7044 <br>
+Id:  172414207 , Name:  StupidGuy , Ranking:  5983<br>
+Id:  106014083 , Name:  www1234543 , Ranking:  6188<br>
+Id:  124168390 , Name:  Mad , Ranking:  7078<br>
+Id:  109822425 , Name:  SHANKS- , Ranking:  6257<br>
+Winrate average:  0.830614050618 ,Team Average ranking:  6510.0<br>
+Team  2<br>
+Id:  103729052 , Name:  876 , Ranking:  5347<br>
+Id:  135384059 , Name:  hym , Ranking:  7630<br>
+Id:  110228930 , Name:  Ayo , Ranking:  7011<br>
+Id:  102024536 , Name:  balloon , Ranking:  5779<br>
+Id:  114031486 , Name:  QD , Ranking:  7327<br>
+Winrate average:  0.79902440992 ,Team Average ranking:  6618.8<br>
+Team  3<br>
+Id:  135384059 , Name:  hym , Ranking:  7630<br>
+Id:  86861614 , Name:  Mrrr , Ranking:  5601<br>
+Id:  110228930 , Name:  Ayo , Ranking:  7011<br>
+Id:  120374476 , Name:  DXM , Ranking:  6940<br>
+Id:  103729052 , Name:  876 , Ranking:  5347<br>
+Winrate average:  0.7960191364 ,Team Average ranking:  6505.8<br>
+Team  4<br>
+Id:  103729052 , Name:  876 , Ranking:  5347<br>
+Id:  169672157 , Name:  Stella , Ranking:  6786<br>
+Id:  114031486 , Name:  QD , Ranking:  7327<br>
+Id:  135384059 , Name:  hym , Ranking:  7630<br>
+Id:  102024536 , Name:  balloon , Ranking:  5779<br>
+Winrate average:  0.785559609861 ,Team Average ranking:  6573.8<br>
+Team  5<br>
+Id:  114031486 , Name:  QD , Ranking:  7327<br>
+Id:  103729052 , Name:  876 , Ranking:  5347<br>
+Id:  102024536 , Name:  balloon , Ranking:  5779<br>
+Id:  92590479 , Name:  Jixing , Ranking:  7024<br>
+Id:  169672157 , Name:  Stella , Ranking:  6786<br>
+Winrate average:  0.772063386746 ,Team Average ranking:  6452.6<br></div>
+<script type="text/javascript">
+  var network;
+
+
+  var allNodes;
+  var highlightActive = false;
+
+  var nodesDataset = new vis.DataSet(nodes); // these come from WorldCup2014.js
+  var edgesDataset = new vis.DataSet(edges); // these come from WorldCup2014.js
+  function redrawAll() {
+    // remove positoins
+   
+ allNodes = nodesDataset.get({returnType:"Object"});
+  
+  //  network.on("click",neighbourhoodHighlight);
+  for (var nodeId in allNodes)
+   { 
+    var s = allNodes[nodeId].title
+	 var arrayOfStrings = s.split("Edges:");
+	 //console.log(arrayOfStrings[1]);
+	 allNodes[nodeId].size = 30 + parseInt(arrayOfStrings[1]);
+	console.log(allNodes[nodeId].size	 );
+	}
+	var updateArray = [];
+    for (nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodesDataset.update(updateArray);
+    // create a network
+    var container = document.getElementById('mynetwork');
+    var data = {
+      nodes: nodesDataset,
+      edges: edgesDataset
+    };
+    var options = {
+      nodes: {
+        shape: 'dot',
+        
+        font: {
+          size: 80,
+          face: 'Tahoma'
+        }
+      },
+      edges: {
+        width: 0.5,
+        smooth: {
+          type: 'continuous'
+        }
+      },
+      physics: {
+        stabilization: false,
+        barnesHut: {
+          gravitationalConstant: -80000,
+          springConstant: 0.01,
+          springLength: 500
+        }
+		
+      },
+      interaction: {
+        tooltipDelay: 200,
+        hideEdgesOnDrag: false
+      }
+    };
+
+    // Note: data is coming from ./datasources/WorldCup2014.js
+    network = new vis.Network(container, data, options);
+network.on("click", function (params) {
+  console.log(params);
+
+});
+
+
+ 
+
+
+
+
+
+    // get a JSON object
+ 
+  var container2 = document.getElementById('details');
+    var items ;
+	var counter4000=0;
+	var counter5000=0;
+	var counter6000=0;
+	var counter7000=0;
+	var counter8000=0;
+	var counter8500=0;
+	for (var nodeId in allNodes)
+	{
+	
+	
+	if (allNodes[nodeId].value*10+4000>8500)
+	   counter8500++;
+	else
+	   if (allNodes[nodeId].value*10+4000>8000)
+	   counter8000++;
+	   else
+			if (allNodes[nodeId].value*10+4000>7000)
+			counter7000++;
+			else
+				if (allNodes[nodeId].value*10+4000>6000)
+				counter6000++;
+				else
+					counter5000++;
+				
+	}
+	var label1 = {
+    content: counter5000
+    
+  }
+
+  var label2 = {
+    content: counter6000
+    
+  }
+  
+  var label3 = {
+    content: counter7000
+  }
+  var label4 = {
+    content: counter8000
+  }
+  var label5 = {
+    content: counter8500
+  }
+	 var items = [
+        {x:5000 , y:counter5000, label : label1},
+         {x:6000, y:counter6000, label : label2},
+         {x:7000,y: counter7000, label : label3},
+         {x:8000, y:counter8000, label : label4},
+		 {x:8500, y:counter8500, label : label5}
+         
+    ];
+
+    var dataset = new vis.DataSet(items);
+    var options2 = {	
+        // align: left, center, right
+        
+        start : 4000,
+		end: 9500
+    };
+    var graph2d = new vis.Graph2d(container2, items, options2);
+  
+  /////////////////////////////////////////////////////////////////////
+  
+		
+		$(function () {
+		
+		
+		$('#MMRdistribution').highcharts({
+        chart: {
+            type: 'scatter',
+            zoomType: 'xy'
+        },
+        title: {
+            text: 'A player\'s mmr compared to his counter parts ' 
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: {
+            title: {
+                enabled: true,
+                text: 'Player Mmmr'
+            },
+            startOnTick: true,
+            endOnTick: true,
+            showLastLabel: true
+        },
+        yAxis: {
+            title: {
+                text: 'Their counterparts average MMR'
+            }
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'left',
+            verticalAlign: 'top',
+            x: 100,
+            y: 70,
+            floating: true,
+            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF',
+            borderWidth: 1
+        },
+        plotOptions: {
+            scatter: {
+                marker: {
+                    radius: 5,
+                    states: {
+                        hover: {
+                            enabled: true,
+                            lineColor: 'rgb(100,100,100)'
+                        }
+                    }
+                },
+                states: {
+                    hover: {
+                        marker: {
+                            enabled: false
+                        }
+                    }
+                },
+                tooltip: {
+                    headerFormat: '<b>{series.name}</b><br>',
+                    pointFormat: 'Player: {point.x} MMR, counterPart: {point.y}  MMR'
+                }
+            }
+        },
+        series: [{
+            type: 'line',
+            name: 'Regression Line',
+            data: [[5000, 5000], [9000,9000]],
+            marker: {
+                enabled: false
+            },
+            states: {
+                hover: {
+                    lineWidth: 0
+                }
+            },
+            enableMouseTracking: false
+        },
+		{
+            name: 'US East',
+            color: 'rgba(0, 0, 255, 1)',
+            data: [[4968,7058.0],
+[7647,7127.55172414],
+[7044,5965.09090909],
+[6964,7033.8],
+[7382,6515.91666667],
+[7611,7106.77419355],
+[6140,6599.0625],
+[7012,7154.0],
+[6755,6824.5],
+[5750,6429.28571429],
+[6815,7088.06666667],
+[7939,7078.43333333],
+[6523,6816.0],
+[6622,7068.0],
+[5252,6772.9],
+[8407,6748.13793103],
+[7211,7321.16129032],
+[7024,6990.54054054],
+[6912,6835.28571429],
+[7327,7121.0],
+[7087,7087.17857143],
+[7533,7306.35897436],
+[4536,6818.70588235],
+[7547,7211.43243243],
+[7927,7059.5],
+[6445,6643.0],
+[6282,6257.5],
+[7113,6849.04347826],
+[6773,6907.42528736],
+[5318,5872.0],
+[5983,5756.83333333],
+[6257,6618.0],
+[7553,7175.57333333],
+[4553,6662.13636364],
+[6051,6104.23076923],
+[7765,7295.9047619],
+[5957,6939.76923077],
+[7192,7230.86363636],
+[7205,7084.29166667],
+[7765,7144.05263158],
+[5243,6875.4375],
+[8203,7038.0],
+[6501,7205.2195122],
+[7790,7100.73913043],
+[6648,6736.17647059],
+[5957,6846.94285714],
+[6022,6173.47368421],
+[6259,6879.28571429],
+[7356,7334.83333333],
+[7601,6993.875],
+[6884,7223.77272727],
+[6730,6920.3125],
+[7109,7510.83333333],
+[5825,6156.71428571],
+[6154,6977.33333333],
+[7000,6418.55555556],
+[7684,7030.640625],
+[7508,7078.94230769],
+[6471,7191.3],
+[6069,6864.55555556],
+[7647,7459.3125],
+[6235,6997.96363636],
+[6019,6696.38461538],
+[7751,7019.97916667],
+[8003,7161.03636364],
+[6519,7126.51351351],
+[6500,6837.40625],
+[6575,6922.9],
+[6570,7056.72916667],
+[7816,7010.30357143],
+[5603,6948.75],
+[6106,6979.92857143],
+[7072,7045.25],
+[6178,6156.23076923],
+[5628,6870.5],
+[7615,7273.2],
+[7317,7196.91666667],
+[7078,6374.44444444],
+[4396,6316.90909091],
+[6239,6717.83333333],
+[7016,6938.75862069],
+[6386,7069.3],
+[7388,6791.34782609],
+[4676,6602.3125],
+[8015,6965.5],
+[6331,6626.41666667],
+[7045,6520.42857143],
+[6799,7087.75],
+[6853,7233.1],
+[7840,7189.85714286],
+[7106,6849.4],
+[7647,7342.69565217],
+[7442,6966.23529412],
+[6500,6495.27272727],
+[7008,7114.14285714],
+[6990,6867.38095238],
+[6188,6338.85714286],
+[6317,7140.59574468],
+[6487,7261.65217391],
+[6193,6147.0],
+[7137,7296.9047619],
+[6784,6970.49019608]
+]
+
+        }, {
+            name: 'Europe',
+            color: 'rgba(255, 0, 0, 0.9)',
+            data: [
+[6359,6637.0],
+[7407,7313.44736842],
+[7472,7434.925],
+[8031,7364.78873239],
+[6567,7262.92307692],
+[6261,7375.27777778],
+[4658,6363.875],
+[7172,7705.5],
+[7886,7361.27777778],
+[5996,6526.28571429],
+[4407,7047.44444444],
+[7380,7790.14285714],
+[6223,7333.93220339],
+[6955,6920.85714286],
+[6389,7351.42857143],
+[6232,7177.91836735],
+[5701,7138.88],
+[8908,7403.96774194],
+[6648,7121.38461538],
+[7639,7306.31521739],
+[7978,7525.85],
+[6843,7204.70833333],
+[7003,6933.33333333],
+[7433,7390.06451613],
+[7583,7456.75438596],
+[7059,7130.3],
+[6504,7214.27848101],
+[6164,6862.9],
+[7977,7363.33870968],
+[6898,7420.46666667],
+[6040,7185.0],
+[8211,7191.0625],
+[6705,6536.0],
+[6819,7175.60416667],
+[7619,7218.32258065],
+[6810,7228.25581395],
+[8653,7585.075],
+[6375,7343.54545455],
+[7580,7385.28125],
+[6567,7086.88888889],
+[9024,7675.95238095],
+[7424,7405.75],
+[5853,7248.375],
+[5004,6378.57142857],
+[6964,6885.45454545],
+[8637,7515.19047619],
+[7797,7336.52173913],
+[5416,7212.36363636],
+[7000,7516.44827586],
+[7524,7117.74603175],
+[6974,7302.61904762],
+[5484,6017.14285714],
+[7594,7113.525],
+[6706,6943.71428571],
+[8018,7418.02040816],
+[8010,7459.35135135],
+[7153,7129.84615385],
+[7737,7368.13333333],
+[8187,7630.78431373],
+[6702,7339.14285714],
+[6224,6734.42857143],
+[8002,7443.92957746],
+[7886,7232.17307692],
+[5922,6680.4],
+[6914,6907.6],
+[6715,6712.16666667],
+[7310,6874.0],
+[6187,6679.2],
+[5251,6565.0],
+[7515,7331.71428571],
+[5306,6999.95652174],
+[7529,7484.85185185],
+[7463,7293.54545455],
+[7704,7344.09090909],
+[7187,7279.43478261],
+[7042,7483.02941176],
+[7323,7107.43333333],
+[6888,6924.36363636],
+[6606,7262.71875],
+[8014,7400.85294118],
+[7487,7252.15789474],
+[7207,7234.47826087],
+[7234,6697.71428571],
+[7372,7297.0],
+[7004,7405.03030303],
+[7619,7339.90909091],
+[8020,7407.66037736],
+[7183,7174.33333333],
+[7949,7506.5],
+[7338,7348.09756098],
+[5838,6638.0],
+[7207,7759.23076923],
+[7542,7207.45833333],
+[7050,7381.88888889],
+[6108,7392.82978723],
+[7873,7303.5],
+[6913,7248.57692308],
+[6073,7181.3220339],
+[7711,7313.08928571],
+[5130,6426.14285714],
+[6269,7337.13888889],
+[5789,6784.66666667],
+[6673,7449.88888889],
+[7286,7253.85185185],
+[6945,7830.8],
+[5394,6871.6],
+[8422,7594.76190476],
+[5266,7051.65217391],
+[5829,6639.5],
+[7513,7462.33333333],
+[7666,7517.07692308],
+[7178,7192.42857143],
+[8187,7579.8],
+[7390,7263.80769231],
+[6819,7562.80555556],
+[8345,7285.83076923],
+[7282,7094.77777778],
+[7974,7373.58461538],
+[7138,7655.84615385],
+[6120,6824.13333333],
+[7372,7430.5],
+[7999,7294.33333333],
+[7492,7273.34090909],
+[6667,7405.75],
+[5377,7126.75],
+[6047,6423.85714286],
+[8045,7622.69565217],
+[7704,7368.97959184],
+[7371,7149.53191489],
+[5829,7156.14285714],
+[7551,7193.76404494],
+[7310,7324.6119403],
+[7868,7155.0],
+[7912,7284.58490566],
+[7051,7008.1875],
+[5101,7061.77777778],
+[6574,7253.09090909],
+[7192,7369.91666667],
+[8211,7314.04285714],
+[6866,7325.94285714],
+[7284,7339.21212121],
+[6528,7416.66666667],
+[7590,7477.78947368],
+[7886,7252.68],
+[7049,7025.16666667],
+[5141,6925.83333333],
+[6891,7559.29032258],
+[8112,7584.23076923],
+[7305,7400.96875],
+[6351,6842.6],
+[8190,7082.2],
+[7470,7354.02985075],
+[7648,7492.84615385],
+[7372,7460.33333333],
+[6395,5939.66666667],
+[8771,7193.21686747],
+[7545,7403.29411765],
+[7891,7235.14705882],
+[7520,7090.33333333],
+[6235,7114.0],
+[7479,7237.44230769],
+[6516,7139.1],
+[7726,7347.68571429],
+[7919,7224.94949495],
+[6137,6823.875],
+[7778,7448.77777778],
+[6681,7247.30188679]
+]
+        },
+        		{
+            name: 'Singapore',
+            color: 'rgba(55, 255, 91, 0.8)',
+            data: [
+[6506,6443.47619048],
+[8304,6878.57142857],
+[7556,7366.47619048],
+[7448,6690.0],
+[7008,7383.75],
+[5123,6638.21428571],
+[6111,6819.88888889],
+[6279,6295.88888889],
+[4931,6119.66666667],
+[7482,6639.0],
+[8013,7251.6],
+[5553,6996.6],
+[6781,6925.57142857],
+[6026,6307.72727273],
+[7055,6409.04166667],
+[6938,7389.15384615],
+[6037,6464.44444444],
+[6987,7055.16666667],
+[8027,7276.02631579],
+[6706,6919.36363636],
+[6195,6449.41935484],
+[7759,7259.35],
+[7344,7282.85],
+[7005,6780.44444444],
+[7130,6903.44444444],
+[7206,6685.66666667],
+[7051,6704.0],
+[7234,6951.53846154],
+[6378,7006.375],
+[7338,7428.88888889],
+[5803,7007.8],
+[6833,6770.9375],
+[7005,7168.375],
+[7530,7121.17857143],
+[7192,6612.38888889],
+[5541,6500.69230769],
+[7090,6710.36],
+[6964,7280.77777778],
+[5601,6233.53846154],
+[5064,6787.75862069],
+[6836,6753.61538462],
+[5054,6347.2],
+[6871,6556.33333333],
+[7169,7361.26666667],
+[8042,7369.88888889],
+[7130,7307.94117647],
+[8292,7459.42253521],
+[7192,6683.16666667],
+[6653,6493.93333333],
+[6121,6342.5],
+[7301,7101.18181818],
+[6465,6301.06666667],
+[7830,6564.75],
+[6228,6741.90909091],
+[7019,6771.16666667],
+[6018,6265.42857143],
+[7110,5965.71428571],
+[5976,6944.86046512],
+[6543,6814.125],
+[6868,7290.25],
+[7420,6796.0],
+[7243,7310.6],
+[6625,7166.14285714],
+[6393,6728.77777778],
+[4916,6513.76923077],
+[6827,6754.35714286],
+[7992,7026.375],
+[4568,6018.16666667],
+[5212,6541.0],
+[8503,7496.05],
+[8189,6964.84210526],
+[7007,6780.66666667],
+[7005,6757.5],
+[5351,6670.77272727],
+[6219,6074.6],
+[6934,7004.21621622],
+[6257,7072.90909091],
+[6312,6376.71428571]
+]
+
+            },
+            {
+            name: 'Zheihang',
+            color: 'rgba(111, 55, 191, .5)',
+            data: [
+[5879,7505.84375],
+[7862,7247.24489796],
+[6839,6577.09090909],
+[4385,7095.57142857],
+[7437,7591.79245283],
+[6753,7140.7027027],
+[6963,7250.05263158],
+[7444,7569.12987013],
+[7903,7650.98],
+[7908,7466.68235294],
+[7228,7339.54385965],
+[7092,7163.375],
+[8156,7558.28571429],
+[7563,7412.44047619],
+[7550,7227.65151515],
+[7486,7357.35185185],
+[6930,7074.7],
+[6422,7285.13043478],
+[7897,7427.05128205],
+[6483,7318.13333333],
+[7581,7077.16666667],
+[5787,7114.54347826],
+[7436,7159.92537313],
+[7011,7015.75609756],
+[7516,7421.05263158],
+[7024,7272.81395349],
+[7031,7344.26923077],
+[6979,7182.01428571],
+[8064,7401.95833333],
+[6706,7157.70588235],
+[6171,7455.66666667],
+[8050,7381.65753425],
+[5616,6688.91666667],
+[7327,7200.015625],
+[6186,7190.0],
+[7153,7624.70588235],
+[8055,7363.59677419],
+[8309,7751.5625],
+[5316,7024.49019608],
+[7205,7362.87012987],
+[6366,7160.0],
+[7665,7132.88235294],
+[5242,7124.76923077],
+[8023,7381.72],
+[9155,7442.42168675],
+[7630,7222.91891892],
+[6113,7300.4],
+[8864,7598.40909091],
+[7180,7196.92592593],
+[7216,7305.36363636],
+[8095,7772.17391304],
+[7965,7298.86885246],
+[7642,7185.14285714],
+[6828,7284.19047619],
+[6786,7236.49090909],
+[6498,6547.0],
+[7156,7227.23943662],
+[7695,7291.31914894],
+[8678,7407.19047619],
+[7442,7184.875],
+[5871,7332.94230769],
+[6221,7436.51851852],
+[7194,6976.72],
+[7346,7271.84507042],
+[7074,7414.14285714],
+[6757,7387.46153846],
+[7019,7012.52631579],
+[5601,7079.84615385],
+[5735,6868.5],
+[6264,7008.0625],
+[8076,7446.3125],
+[7567,7377.33333333],
+[6717,7066.06122449],
+[7807,7088.14285714],
+[8308,7337.07],
+[5875,7491.55555556],
+[5989,6925.16666667],
+[6032,7143.23809524],
+[6760,7162.9],
+[8993,7244.85576923],
+[6504,7057.43589744],
+[6959,7369.73529412],
+[7693,7327.25],
+[6551,7210.08333333],
+[5809,6482.88888889]
+]
+
+            },
+            {
+            name: 'Shanghai',
+            color: 'rgba(0, 0, 0, 1)',
+            data: [
+[8490,7524.52],
+[7639,7307.21621622],
+[6392,7463.98387097],
+[7598,7623.8627451],
+[7782,7398.0],
+[6834,7414.22222222],
+[7470,7209.08571429],
+[6988,7721.96153846],
+[7458,6556.22222222],
+[7315,7372.13131313],
+[7859,7690.83333333],
+[8299,7489.05555556],
+[7516,7484.42857143],
+[6482,7211.56521739],
+[6752,7780.21428571],
+[7481,7249.54285714],
+[8033,7557.8],
+[7423,7298.82352941],
+[7694,7247.4],
+[5332,7462.5],
+[7690,7415.91304348],
+[6407,7452.0],
+[7487,7638.58333333],
+[7447,7352.02040816],
+[8274,7653.96875],
+[6831,7332.30434783],
+[5820,6849.0],
+[7451,7178.86206897],
+[6152,6951.25],
+[6445,7160.38461538],
+[7284,7362.59459459],
+[7635,7291.86486486],
+[7549,7566.93150685],
+[5624,6867.47058824],
+[8562,7755.67647059],
+[7082,7377.51351351],
+[7544,7611.125],
+[8992,7702.41463415],
+[7274,7336.77777778],
+[7753,7109.45454545],
+[5896,7251.375],
+[7103,7478.72727273],
+[8207,7946.72727273],
+[7618,7647.875],
+[7025,7475.93589744],
+[7037,7121.375],
+[7076,7211.85714286],
+[8074,7762.66666667],
+[7303,7585.62711864],
+[7601,7035.5],
+[7288,7309.47619048],
+[7758,7687.85714286],
+[7264,7397.0],
+[6841,7298.95454545]
+]
+            }
+        
+        
+        ]});
+		
+    
+});   
+  
+  /////
+
+	/////
+  }
+  
+ 
+   function neighbourhoodHighlight(params) {
+    // if something is selected:
+    if (params.nodes.length > 0) {
+      highlightActive = true;
+      var i,j;
+      var selectedNode = params.nodes[0];
+      var degrees = 2;
+
+      // mark all nodes as hard to read.
+      for (var nodeId in allNodes) {
+        allNodes[nodeId].color = 'rgba(200,200,200,0.5)';
+        if (allNodes[nodeId].hiddenLabel === undefined) {
+          allNodes[nodeId].hiddenLabel = allNodes[nodeId].label;
+          allNodes[nodeId].label = undefined;
+        }
+      }
+      var connectedNodes = network.getConnectedNodes(selectedNode);
+      var allConnectedNodes = [];
+
+      // get the second degree nodes
+      for (i = 1; i < degrees; i++) {
+        for (j = 0; j < connectedNodes.length; j++) {
+          allConnectedNodes = allConnectedNodes.concat(network.getConnectedNodes(connectedNodes[j]));
+        }
+      }
+
+      // all second degree nodes get a different color and their label back
+      for (i = 0; i < allConnectedNodes.length; i++) {
+        allNodes[allConnectedNodes[i]].color = 'rgba(150,150,150,0.75)';
+        if (allNodes[allConnectedNodes[i]].hiddenLabel !== undefined) {
+          allNodes[allConnectedNodes[i]].label = allNodes[allConnectedNodes[i]].hiddenLabel;
+          allNodes[allConnectedNodes[i]].hiddenLabel = undefined;
+        }
+      }
+
+      // all first degree nodes get their own color and their label back
+      for (i = 0; i < connectedNodes.length; i++) {
+        allNodes[connectedNodes[i]].color = undefined;
+        if (allNodes[connectedNodes[i]].hiddenLabel !== undefined) {
+          allNodes[connectedNodes[i]].label = allNodes[connectedNodes[i]].hiddenLabel;
+          allNodes[connectedNodes[i]].hiddenLabel = undefined;
+        }
+      }
+
+      // the main node gets its own color and its label back.
+      allNodes[selectedNode].color = undefined;
+      if (allNodes[selectedNode].hiddenLabel !== undefined) {
+        allNodes[selectedNode].label = allNodes[selectedNode].hiddenLabel;
+        allNodes[selectedNode].hiddenLabel = undefined;
+      }
+    }
+    else if (highlightActive === true) {
+      // reset all nodes
+      for (var nodeId in allNodes) {
+        allNodes[nodeId].color = undefined;
+        if (allNodes[nodeId].hiddenLabel !== undefined) {
+          allNodes[nodeId].label = allNodes[nodeId].hiddenLabel;
+          allNodes[nodeId].hiddenLabel = undefined;
+        }
+      }
+      highlightActive = false
+    }
+
+    // transform the object into an array
+    var updateArray = [];
+    for (nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodesDataset.update(updateArray);
+	
+	
+	
+
+
+  }
+  
+
+
+  redrawAll()
+</script>
+</body>
+</html>
